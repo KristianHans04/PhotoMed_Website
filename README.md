@@ -1,6 +1,6 @@
 # PhotoMed Website
 
-MAn AI-powered traditional medicine mobile application.
+An AI-powered traditional medicine mobile application.
 
 ## Overview
 
