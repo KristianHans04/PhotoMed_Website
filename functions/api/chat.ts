@@ -79,7 +79,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         'X-Title': 'PhotoMed Website Assistant',
       },
       body: JSON.stringify({
-        model: 'google/gemma-3-1b-it:free',
+        model: 'openrouter/free',
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           ...recentMessages,
