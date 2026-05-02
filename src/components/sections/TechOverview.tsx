@@ -68,7 +68,7 @@ export default function TechOverview() {
           <div className="relative">
             <div className="overflow-hidden rounded-2xl shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=800&q=80"
+                src="/images/vegetation-dense.webp"
                 alt="Dense tropical vegetation with various medicinal plants"
                 className="aspect-[3/4] w-full object-cover"
                 loading="lazy"
