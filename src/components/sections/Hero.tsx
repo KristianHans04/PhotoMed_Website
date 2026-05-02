@@ -55,17 +55,6 @@ export default function Hero() {
                 See It In Action
               </Button>
             </div>
-
-            <div
-              className="mt-8 flex items-center gap-6 animate-slide-up text-primary-300/70 text-sm lg:justify-start justify-center"
-              style={{ animationDelay: '600ms' }}
-            >
-              <span>Android</span>
-              <span className="h-1 w-1 rounded-full bg-primary-500" />
-              <span>Free</span>
-              <span className="h-1 w-1 rounded-full bg-primary-500" />
-              <span>Open Source</span>
-            </div>
           </div>
 
           <div className="hidden animate-fade-in lg:flex lg:justify-center" style={{ animationDelay: '400ms' }}>
