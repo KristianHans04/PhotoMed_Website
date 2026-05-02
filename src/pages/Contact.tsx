@@ -33,14 +33,26 @@ export default function Contact() {
 
   return (
     <>
-      <section className="bg-gradient-to-b from-primary-50 to-white py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Hero with vegetation background */}
+      <section className="relative overflow-hidden bg-primary-950 py-24 md:py-32">
+        <div className="absolute inset-0 opacity-15">
+          <img
+            src="/images/vegetation-hands.webp"
+            alt=""
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/60 to-primary-950" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedBlock>
             <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-4xl font-extrabold text-text-primary sm:text-5xl">
+              <span className="text-sm font-semibold uppercase tracking-wider text-primary-400">
+                Get in Touch
+              </span>
+              <h1 className="mt-4 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
                 Let's talk
               </h1>
-              <p className="mt-6 text-lg text-text-muted">
+              <p className="mt-6 text-lg text-primary-200/80">
                 Whether you are interested in partnerships, research collaboration, funding
                 opportunities, or just want to learn more about what we are building — we
                 want to hear from you.
@@ -69,86 +81,93 @@ export default function Contact() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="grid gap-5 sm:grid-cols-2">
+                <div className="rounded-2xl border border-primary-100 bg-white p-6 shadow-sm md:p-10">
+                  <h2 className="text-xl font-bold text-text-primary">Send us a message</h2>
+                  <p className="mt-1 text-sm text-text-muted">
+                    We read and respond to every message personally.
+                  </p>
+
+                  <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+                    <div className="grid gap-5 sm:grid-cols-2">
+                      <div>
+                        <label className="mb-1.5 block text-sm font-medium text-text-primary">
+                          Name
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={form.name}
+                          onChange={(e) => setForm({ ...form, name: e.target.value })}
+                          className="w-full rounded-xl border border-primary-200 bg-white px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                          placeholder="Your name"
+                        />
+                      </div>
+                      <div>
+                        <label className="mb-1.5 block text-sm font-medium text-text-primary">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          required
+                          value={form.email}
+                          onChange={(e) => setForm({ ...form, email: e.target.value })}
+                          className="w-full rounded-xl border border-primary-200 bg-white px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                          placeholder="you@example.com"
+                        />
+                      </div>
+                    </div>
+
                     <div>
                       <label className="mb-1.5 block text-sm font-medium text-text-primary">
-                        Name
+                        Subject
                       </label>
                       <input
                         type="text"
                         required
-                        value={form.name}
-                        onChange={(e) => setForm({ ...form, name: e.target.value })}
-                        className="w-full rounded-lg border border-primary-200 bg-white px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-                        placeholder="Your name"
+                        value={form.subject}
+                        onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                        className="w-full rounded-xl border border-primary-200 bg-white px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                        placeholder="Partnership, Research, Funding, General Inquiry..."
                       />
                     </div>
+
                     <div>
                       <label className="mb-1.5 block text-sm font-medium text-text-primary">
-                        Email
+                        Message
                       </label>
-                      <input
-                        type="email"
+                      <textarea
                         required
-                        value={form.email}
-                        onChange={(e) => setForm({ ...form, email: e.target.value })}
-                        className="w-full rounded-lg border border-primary-200 bg-white px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-                        placeholder="you@example.com"
+                        rows={6}
+                        value={form.message}
+                        onChange={(e) => setForm({ ...form, message: e.target.value })}
+                        className="w-full resize-none rounded-xl border border-primary-200 bg-white px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                        placeholder="Tell us what you're thinking..."
                       />
                     </div>
-                  </div>
 
-                  <div>
-                    <label className="mb-1.5 block text-sm font-medium text-text-primary">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={form.subject}
-                      onChange={(e) => setForm({ ...form, subject: e.target.value })}
-                      className="w-full rounded-lg border border-primary-200 bg-white px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-                      placeholder="Partnership, Research, Funding, General Inquiry..."
-                    />
-                  </div>
-
-                  <div>
-                    <label className="mb-1.5 block text-sm font-medium text-text-primary">
-                      Message
-                    </label>
-                    <textarea
-                      required
-                      rows={5}
-                      value={form.message}
-                      onChange={(e) => setForm({ ...form, message: e.target.value })}
-                      className="w-full resize-none rounded-lg border border-primary-200 bg-white px-4 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-                      placeholder="Tell us what you're thinking..."
-                    />
-                  </div>
-
-                  {status === 'error' && (
-                    <p className="text-sm text-red-600">{errorMessage}</p>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="flex w-full items-center justify-center gap-2 rounded-lg bg-primary-700 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:bg-primary-800 disabled:opacity-50"
-                  >
-                    {status === 'loading' ? (
-                      <>
-                        <Loader2 size={16} className="animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        <Send size={16} />
-                        Send Message
-                      </>
+                    {status === 'error' && (
+                      <p className="text-sm text-red-600">{errorMessage}</p>
                     )}
-                  </button>
-                </form>
+
+                    <button
+                      type="submit"
+                      disabled={status === 'loading'}
+                      className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-700 px-6 py-4 text-sm font-semibold text-white transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/20 disabled:opacity-50"
+                    >
+                      {status === 'loading' ? (
+                        <>
+                          <Loader2 size={16} className="animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <Send size={16} />
+                          Send Message
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </div>
               )}
             </AnimatedBlock>
           </div>
@@ -182,6 +201,16 @@ export default function Contact() {
                     We respond to all inquiries within 48 hours. For urgent matters
                     related to partnerships or funding, please indicate this in your subject line.
                   </p>
+                </div>
+
+                {/* Community image */}
+                <div className="overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/community-2.webp"
+                    alt="PhotoMed being used in a rural East African community"
+                    className="aspect-[4/3] w-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             </AnimatedBlock>
