@@ -7,11 +7,10 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center gap-2">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-700">
-                <span className="text-sm font-bold text-white">PM</span>
-              </div>
-              <span className="text-xl font-bold text-primary-900">PhotoMed</span>
+            <Link to="/" className="flex items-center">
+              <span className="text-xl font-extrabold tracking-tight text-primary-900">
+                Photo<span className="text-primary-600">Med</span>
+              </span>
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-text-muted">
               {SITE_CONFIG.description}

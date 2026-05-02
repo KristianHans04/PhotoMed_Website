@@ -11,11 +11,10 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-primary-100/50 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-700">
-            <span className="text-sm font-bold text-white">PM</span>
-          </div>
-          <span className="text-xl font-bold text-primary-900">PhotoMed</span>
+        <Link to="/" className="flex items-center">
+          <span className="text-xl font-extrabold tracking-tight text-primary-900">
+            Photo<span className="text-primary-600">Med</span>
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
