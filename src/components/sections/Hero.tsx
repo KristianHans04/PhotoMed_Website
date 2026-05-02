@@ -20,9 +20,6 @@ export default function Hero() {
         <div className="grid w-full items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="text-center lg:text-left">
             <div className="animate-fade-in">
-              <span className="mb-6 inline-block rounded-full border border-primary-400/30 bg-primary-800/50 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-primary-200">
-                AI-Powered Traditional Medicine Platform
-              </span>
             </div>
 
             <h1 className="animate-slide-up text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
@@ -72,16 +69,17 @@ export default function Hero() {
           </div>
 
           <div className="hidden animate-fade-in lg:flex lg:justify-center" style={{ animationDelay: '400ms' }}>
-            <div className="relative">
+            <div className="relative flex items-end gap-4">
               <PhoneFrame
                 src="/images/app-screen-plantid.webp"
                 alt="PhotoMed plant identification screen showing species analysis results"
+                size="lg"
               />
-              <div className="absolute -bottom-8 -left-16 z-20 hidden xl:block">
+              <div className="hidden xl:block">
                 <PhoneFrame
                   src="/images/app-screen-map.webp"
                   alt="PhotoMed geospatial map showing nearby medicinal plant locations"
-                  className="w-[180px] opacity-80"
+                  size="sm"
                 />
               </div>
             </div>

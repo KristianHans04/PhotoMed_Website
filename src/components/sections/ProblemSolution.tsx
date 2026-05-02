@@ -93,11 +93,11 @@ export default function ProblemSolution() {
                 className={`group flex h-full flex-col overflow-hidden rounded-2xl border-t-4 bg-white shadow-sm transition-shadow hover:shadow-lg ${feature.accent}`}
               >
                 <div className="flex justify-center bg-gradient-to-b from-primary-50 to-white px-6 pt-8 pb-4">
-                  <div className="w-40 overflow-hidden rounded-2xl border-4 border-gray-900 shadow-lg">
+                  <div className="w-32 overflow-hidden rounded-xl border-[3px] border-gray-900 shadow-lg">
                     <img
                       src={feature.image}
                       alt={feature.title}
-                      className="aspect-[9/16] w-full object-cover"
+                      className="aspect-[9/16] w-full object-cover object-top"
                       loading="lazy"
                     />
                   </div>
