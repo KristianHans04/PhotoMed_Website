@@ -1,6 +1,6 @@
 # PhotoMed Website
 
-Marketing and information website for the PhotoMed platform — an AI-powered traditional medicine mobile application.
+MAn AI-powered traditional medicine mobile application.
 
 ## Overview
 
@@ -11,11 +11,9 @@ This is the public-facing website for PhotoMed, deployed at [photomed.kristianha
 - **Framework**: React 19 + TypeScript
 - **Build Tool**: Vite 8
 - **Styling**: Tailwind CSS v4
-- **Hosting**: Cloudflare Pages (with Git integration for auto-deploy)
-- **API Functions**: Cloudflare Pages Functions (edge)
 - **Email**: Resend
 - **Payments**: Paystack
-- **AI Chat**: OpenRouter (free tier models)
+- **AI Chat**: OpenRouter
 
 ## Project Structure
 
@@ -57,21 +55,12 @@ npm run cf:dev
 
 ## Deployment
 
-Deployment happens automatically on push to `main` via Cloudflare Pages Git integration. Manual deploy:
+Deployment happens automatically on push to `main` . Manual deploy:
 
 ```bash
 npm run deploy
 ```
 
-## Environment Variables
-
-Set in the Cloudflare Pages dashboard (Settings > Environment Variables):
-
-- `OPENROUTER_API_KEY` — AI chat functionality
-- `RESEND_API_KEY` — Contact form emails
-- `CONTACT_TO_EMAIL` — Contact form recipient
-
-See `.env.example` for the full list.
 
 ## Connected Repositories
 
