@@ -90,8 +90,8 @@ export default function Download() {
               <div className="relative mx-auto max-w-sm">
                 <div className="overflow-hidden rounded-[2.5rem] border-8 border-primary-900 bg-primary-900 shadow-2xl">
                   <img
-                    src="https://images.unsplash.com/photo-1596046120220-e8f0b87e84de?w=400&q=80"
-                    alt="PhotoMed app interface showing plant identification"
+                    src="/images/app-screen-plantid.webp"
+                    alt="PhotoMed app interface showing plant identification results"
                     className="aspect-[9/16] w-full object-cover"
                     loading="lazy"
                   />

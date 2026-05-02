@@ -4,6 +4,7 @@ import Button from '@/components/ui/Button'
 export default function About() {
   return (
     <>
+      {/* Hero banner with community image */}
       <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 to-white py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedBlock>
@@ -21,6 +22,7 @@ export default function About() {
         </div>
       </section>
 
+      {/* Problem / Solution - with image */}
       <Section>
         <div className="grid gap-16 lg:grid-cols-2">
           <AnimatedBlock>
@@ -43,6 +45,14 @@ export default function About() {
                   knowledge of what to use, when, and how is concentrated in aging practitioners
                   with no digital documentation. When they pass, their knowledge vanishes with them.
                 </p>
+              </div>
+              <div className="mt-8 overflow-hidden rounded-2xl">
+                <img
+                  src="/images/community-3.webp"
+                  alt="Traditional healer preparing medicinal herbs"
+                  className="aspect-[16/10] w-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
           </AnimatedBlock>
@@ -69,11 +79,20 @@ export default function About() {
                   is at risk of being permanently lost.
                 </p>
               </div>
+              <div className="mt-8 overflow-hidden rounded-2xl">
+                <img
+                  src="/images/community-2.webp"
+                  alt="Young man using smartphone to identify plants in rural East Africa"
+                  className="aspect-[16/10] w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </AnimatedBlock>
         </div>
       </Section>
 
+      {/* Vision */}
       <Section className="bg-surface-dim">
         <AnimatedBlock>
           <h2 className="text-center text-3xl font-bold text-text-primary">Our Vision</h2>
@@ -115,6 +134,7 @@ export default function About() {
         </div>
       </Section>
 
+      {/* Where we are today */}
       <Section>
         <AnimatedBlock>
           <div className="mx-auto max-w-3xl text-center">

@@ -15,7 +15,7 @@ const detailedSteps = [
       'Returns safety classification and toxicity warnings',
       'Stores identification with GPS coordinates for community mapping',
     ],
-    image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80',
+    image: '/images/app-screen-plantid.webp',
   },
   {
     icon: MessageCircle,
@@ -29,7 +29,7 @@ const detailedSteps = [
       'Distinguishes between traditional and clinical evidence',
       'Always recommends professional consultation for serious symptoms',
     ],
-    image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?w=800&q=80',
+    image: '/images/app-screen-chat.webp',
   },
   {
     icon: MapPin,
@@ -43,7 +43,7 @@ const detailedSteps = [
       'Expert verification workflow',
       'Navigation to exact plant locations',
     ],
-    image: 'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80',
+    image: '/images/app-screen-map.webp',
   },
 ]
 
