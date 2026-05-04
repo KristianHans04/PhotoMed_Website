@@ -76,9 +76,6 @@ export default function Footer() {
           <p className="text-sm text-text-muted">
             {new Date().getFullYear()} PhotoMed. All rights reserved.
           </p>
-          <p className="text-sm text-text-muted">
-            Built with purpose. For the communities that need it most.
-          </p>
         </div>
       </div>
     </footer>

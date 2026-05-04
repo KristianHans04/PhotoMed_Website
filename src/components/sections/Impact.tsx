@@ -79,10 +79,6 @@ export default function Impact() {
                   loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 rounded-xl bg-primary-700 p-4 shadow-lg">
-                <p className="text-sm font-bold text-white">Not replacing.</p>
-                <p className="text-xs text-primary-200">Preserving and digitizing.</p>
-              </div>
             </div>
           </AnimatedBlock>
 

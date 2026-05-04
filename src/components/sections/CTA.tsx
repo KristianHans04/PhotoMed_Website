@@ -64,19 +64,6 @@ export default function CTA() {
                 research, development, and expansion into underserved regions.
               </p>
 
-              <div className="mt-8 grid grid-cols-3 gap-4">
-                {[
-                  { label: 'AI Training', value: 'Better identification accuracy' },
-                  { label: 'Field Research', value: 'Community plant verification' },
-                  { label: 'Expansion', value: 'New regions and languages' },
-                ].map((item) => (
-                  <div key={item.label} className="rounded-xl bg-primary-50 p-4">
-                    <p className="text-sm font-bold text-primary-700">{item.label}</p>
-                    <p className="mt-1 text-xs text-text-muted">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Button href="/donate" size="lg">
                   Support the Mission
