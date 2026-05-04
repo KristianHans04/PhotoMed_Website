@@ -1,4 +1,5 @@
 import { Section, AnimatedBlock } from '@/components/ui/Section'
+import PhoneFrame from '@/components/ui/PhoneFrame'
 
 export default function ProblemSolution() {
   return (
@@ -88,14 +89,7 @@ export default function ProblemSolution() {
             <AnimatedBlock key={feature.title} delay={i * 150}>
               <div className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg">
                 <div className="flex justify-center bg-gradient-to-b from-primary-50 to-white px-6 pt-8 pb-4">
-                  <div className="w-32 overflow-hidden rounded-xl border-[3px] border-gray-900 shadow-lg">
-                    <img
-                      src={feature.image}
-                      alt={feature.title}
-                      className="aspect-[9/16] w-full object-cover object-top"
-                      loading="lazy"
-                    />
-                  </div>
+                  <PhoneFrame src={feature.image} alt={feature.title} size="sm" />
                 </div>
                 <div className="flex flex-1 flex-col p-6 pt-4">
                   <h3 className="text-lg font-bold text-text-primary">{feature.title}</h3>

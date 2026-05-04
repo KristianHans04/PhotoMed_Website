@@ -12,6 +12,7 @@ export const SITE_CONFIG = {
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
+  { label: 'Blog', href: '/blog' },
   { label: 'Download', href: '/download' },
   { label: 'Donate', href: '/donate' },
   { label: 'Contact', href: '/contact' },
@@ -21,9 +22,11 @@ export const FOOTER_LINKS = {
   product: [
     { label: 'Download', href: '/download' },
     { label: 'Donate', href: '/donate' },
+    { label: 'Research', href: '/research' },
   ],
   company: [
     { label: 'About', href: '/about' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
   ],
   legal: [

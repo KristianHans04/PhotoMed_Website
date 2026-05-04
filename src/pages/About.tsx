@@ -1,5 +1,4 @@
 import { AnimatedBlock } from '@/components/ui/Section'
-import Button from '@/components/ui/Button'
 
 export default function About() {
   return (
@@ -172,62 +171,6 @@ export default function About() {
               </div>
             </AnimatedBlock>
           </div>
-        </div>
-      </section>
-
-      {/* Stats band */}
-      <section className="border-y border-primary-100 bg-white py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            {[
-              { value: '80%', label: 'of developing nations rely on traditional medicine' },
-              { value: '40,000+', label: 'plant species used medicinally worldwide' },
-              { value: '1 in 3', label: 'people lack access to essential medicines' },
-              { value: '187', label: 'automated tests ensuring platform reliability' },
-            ].map((stat, i) => (
-              <AnimatedBlock key={stat.label} delay={i * 100}>
-                <div className="text-center">
-                  <div className="text-3xl font-black text-primary-700 md:text-4xl">{stat.value}</div>
-                  <p className="mt-2 text-xs text-text-muted">{stat.label}</p>
-                </div>
-              </AnimatedBlock>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Where we are today with vegetation image */}
-      <section className="relative overflow-hidden py-20 md:py-28">
-        <div className="absolute bottom-0 right-0 top-0 hidden w-1/3 lg:block">
-          <img
-            src="/images/vegetation-hands.webp"
-            alt="Hands holding medicinal plants"
-            className="h-full w-full object-cover"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/50 to-transparent" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedBlock>
-            <div className="max-w-2xl">
-              <span className="text-sm font-semibold uppercase tracking-wider text-primary-700">
-                Current Status
-              </span>
-              <h2 className="mt-3 text-3xl font-bold text-text-primary sm:text-4xl">
-                Where We Are Today
-              </h2>
-              <p className="mt-6 text-text-muted leading-relaxed">
-                PhotoMed is currently in active development with a working MVP targeting the
-                Kenyan market. Our backend API serves plant identification, symptom analysis,
-                and geospatial queries. The mobile application is functional on Android with
-                iOS support planned.
-              </p>
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button href="/donate">Support Development</Button>
-                <Button href="/download" variant="secondary">Try the App</Button>
-              </div>
-            </div>
-          </AnimatedBlock>
         </div>
       </section>
     </>

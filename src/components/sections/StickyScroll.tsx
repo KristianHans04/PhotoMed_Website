@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatedBlock } from '@/components/ui/Section'
+import PhoneFrame from '@/components/ui/PhoneFrame'
 
 const steps = [
   {
@@ -109,12 +110,18 @@ export default function StickyScrollSection() {
 
               <div className="flex items-center justify-center">
                 <div className="w-full max-w-md overflow-hidden rounded-3xl border border-primary-200 bg-white shadow-xl">
-                  <img
-                    src={steps[activeStep].image}
-                    alt={steps[activeStep].caption}
-                    className="aspect-[4/5] w-full object-cover"
-                    loading="lazy"
-                  />
+                  <div className="flex justify-center bg-gradient-to-b from-primary-50 to-white px-4 py-5">
+                    {steps[activeStep].image.includes('app-screen-') ? (
+                      <PhoneFrame src={steps[activeStep].image} alt={steps[activeStep].caption} size="md" />
+                    ) : (
+                      <img
+                        src={steps[activeStep].image}
+                        alt={steps[activeStep].caption}
+                        className="aspect-[4/5] w-full object-cover"
+                        loading="lazy"
+                      />
+                    )}
+                  </div>
                   <div className="border-t border-primary-100 bg-gradient-to-r from-primary-50 to-white px-5 py-4">
                     <p className="text-sm font-medium text-text-primary">{steps[activeStep].caption}</p>
                   </div>

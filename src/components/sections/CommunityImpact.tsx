@@ -37,8 +37,8 @@ const impacts = [
   },
   {
     stat: '12x',
-    description: 'Rural Kenyans are more likely to consult a traditional healer before visiting a hospital.',
-    source: 'Kenya National Health Survey, 2019',
+    description: 'Rural communities across Africa often rely on traditional healers before formal clinical care.',
+    source: 'Regional health utilization studies, 2019',
   },
 ]
 
