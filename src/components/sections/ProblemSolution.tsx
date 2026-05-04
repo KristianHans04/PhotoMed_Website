@@ -71,27 +71,22 @@ export default function ProblemSolution() {
               description:
                 'Point your camera at any plant. Our AI cross-references multiple botanical databases and returns species identification, medicinal properties, and safety information within seconds.',
               image: '/images/app-screen-plantid.webp',
-              accent: 'border-t-primary-500',
             },
             {
               title: 'Describe your symptoms. Get guidance.',
               description:
                 'Tell our AI assistant what you are experiencing. It draws on ethnobotanical research to suggest plant-based remedies traditionally used for your symptoms, with clear safety boundaries.',
               image: '/images/app-screen-chat.webp',
-              accent: 'border-t-primary-600',
             },
             {
               title: 'Find medicinal plants near you.',
               description:
                 'Our geospatial engine maps medicinal plant locations in your region. Navigate directly to verified sightings contributed by the community and validated by botanical experts.',
               image: '/images/app-screen-map.webp',
-              accent: 'border-t-primary-700',
             },
           ].map((feature, i) => (
             <AnimatedBlock key={feature.title} delay={i * 150}>
-              <div
-                className={`group flex h-full flex-col overflow-hidden rounded-2xl border-t-4 bg-white shadow-sm transition-shadow hover:shadow-lg ${feature.accent}`}
-              >
+              <div className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg">
                 <div className="flex justify-center bg-gradient-to-b from-primary-50 to-white px-6 pt-8 pb-4">
                   <div className="w-32 overflow-hidden rounded-xl border-[3px] border-gray-900 shadow-lg">
                     <img

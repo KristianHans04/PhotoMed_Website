@@ -62,11 +62,19 @@ npm run deploy
 ```
 
 
-## Connected Repositories
+## APK Distribution
 
-- **PhotoMed (main app)**: [KristianHans04/PhotoMed](https://github.com/KristianHans04/PhotoMed)
-  - APK releases are pulled from GitHub Releases for the download page
-  - The website auto-fetches the latest release at runtime
+The mobile app repository is private. The website serves APK downloads through a Cloudflare Pages Function endpoint:
+
+- `GET /api/apk-latest` → redirects to the latest configured APK URL
+- `GET /api/apk-latest?meta=1` → returns download metadata used by the Download page
+
+Set these environment variables in Cloudflare Pages:
+
+- `APK_DOWNLOAD_URL`
+- `APK_VERSION` (optional)
+- `APK_UPDATED_AT` (optional ISO timestamp)
+- `APK_SIZE_BYTES` (optional)
 
 ## License
 

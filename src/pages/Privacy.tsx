@@ -84,7 +84,7 @@ export default function Privacy() {
           <div>
             <h2 className="text-xl font-bold text-text-primary">7. Contact</h2>
             <p className="mt-3">
-              For privacy-related inquiries, contact us at hello@kristianhans.com with
+              For privacy-related inquiries, contact us at support@photomed.app with
               "Privacy" in the subject line. We will respond within 30 days.
             </p>
           </div>

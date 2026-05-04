@@ -22,7 +22,7 @@ export default function About() {
               </span>
               <h1 className="mt-4 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
                 We are building the world's first
-                <span className="text-primary-300"> open infrastructure</span> for traditional plant medicine
+                <span className="text-primary-300"> trusted digital platform</span> for traditional plant medicine
               </h1>
               <p className="mt-6 text-lg text-primary-200/80 leading-relaxed">
                 PhotoMed exists because the knowledge that billions of people rely on for
@@ -142,7 +142,7 @@ export default function About() {
                 <h3 className="mt-4 text-xl font-bold text-white">Preserve</h3>
                 <p className="mt-3 text-sm text-primary-200/70 leading-relaxed">
                   Document and digitize traditional plant medicine knowledge before it disappears.
-                  Build the largest open ethnobotanical dataset in the world. Work directly with
+                  Build the largest ethnobotanical dataset in the world. Work directly with
                   community healers and botanical researchers.
                 </p>
               </div>
@@ -221,11 +221,6 @@ export default function About() {
                 Kenyan market. Our backend API serves plant identification, symptom analysis,
                 and geospatial queries. The mobile application is functional on Android with
                 iOS support planned.
-              </p>
-              <p className="mt-4 text-text-muted leading-relaxed">
-                The technology stack — Flutter for cross-platform mobile, a Node.js API backed
-                by PostgreSQL with PostGIS for spatial data, AI models via Google Gemini and
-                PlantNet — is built to scale across regions and languages.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                 <Button href="/donate">Support Development</Button>

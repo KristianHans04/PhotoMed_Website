@@ -42,7 +42,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     }
 
     const resendKey = env.RESEND_API_KEY
-    const toEmail = env.CONTACT_TO_EMAIL || 'hello@kristianhans.com'
+    const toEmail = env.CONTACT_TO_EMAIL || 'support@photomed.app'
 
     // Send notification to team
     const notificationRes = await fetch('https://api.resend.com/emails', {
@@ -79,10 +79,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
               <p style="margin: 0; color: #0a1f13; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${body.message}</p>
             </div>
             <div style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #dcfce7;">
-              <p style="margin: 0; color: #6b7f73; font-size: 12px;">Sent from photomed.kristianhans.com contact form</p>
-            </div>
-          </div>
-        `,
+               <p style="margin: 0; color: #6b7f73; font-size: 12px;">Sent from the PhotoMed website contact form</p>
+             </div>
+           </div>
+         `,
       }),
     })
 
@@ -117,11 +117,8 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             <p style="color: #374a3e; font-size: 14px; line-height: 1.7;">
               We have received your message regarding "${body.subject}" and will respond within 48 hours.
             </p>
-            <p style="color: #374a3e; font-size: 14px; line-height: 1.7;">
-              In the meantime, you can explore our platform at <a href="https://photomed.kristianhans.com" style="color: #15803d;">photomed.kristianhans.com</a>.
-            </p>
             <div style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #dcfce7;">
-              <p style="margin: 0; color: #6b7f73; font-size: 12px;">PhotoMed - AI-Powered Traditional Medicine Platform</p>
+              <p style="margin: 0; color: #6b7f73; font-size: 12px;">PhotoMed Support Team</p>
             </div>
           </div>
         `,

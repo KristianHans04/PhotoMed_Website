@@ -90,7 +90,7 @@ export default function Terms() {
           <div>
             <h2 className="text-xl font-bold text-text-primary">9. Contact</h2>
             <p className="mt-3">
-              For questions about these terms, contact us at hello@kristianhans.com.
+              For questions about these terms, contact us at support@photomed.app.
             </p>
           </div>
         </div>

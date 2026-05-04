@@ -8,6 +8,7 @@ interface AnimatedCounterProps {
   duration?: number
   label: string
   sublabel?: string
+  theme?: 'default' | 'inverted'
 }
 
 export default function AnimatedCounter({
@@ -17,6 +18,7 @@ export default function AnimatedCounter({
   duration = 2000,
   label,
   sublabel,
+  theme = 'default',
 }: AnimatedCounterProps) {
   const { ref, isInView } = useInView({ threshold: 0.3 })
   const [count, setCount] = useState(0)
@@ -43,14 +45,14 @@ export default function AnimatedCounter({
 
   return (
     <div ref={ref} className="text-center">
-      <div className="text-5xl font-black tracking-tight text-primary-700 lg:text-6xl">
+      <div className={`text-5xl font-black tracking-tight lg:text-6xl ${theme === 'inverted' ? 'text-primary-200' : 'text-primary-700'}`}>
         {prefix}
         {count.toLocaleString()}
         {suffix}
       </div>
-      <p className="mt-2 text-base font-semibold text-text-primary">{label}</p>
+      <p className={`mt-2 text-base font-semibold ${theme === 'inverted' ? 'text-white' : 'text-text-primary'}`}>{label}</p>
       {sublabel && (
-        <p className="mt-1 text-sm text-text-muted">{sublabel}</p>
+        <p className={`mt-1 text-sm ${theme === 'inverted' ? 'text-primary-200/80' : 'text-text-muted'}`}>{sublabel}</p>
       )}
     </div>
   )

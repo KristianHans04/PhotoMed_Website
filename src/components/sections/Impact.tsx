@@ -26,36 +26,40 @@ export default function Impact() {
           </AnimatedBlock>
 
           <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-2xl border border-primary-700/30 bg-primary-800/40 p-6 backdrop-blur-sm">
+            <div className="rounded-2xl border border-primary-600/40 bg-primary-900/70 p-6 backdrop-blur-sm">
               <AnimatedCounter
                 end={80}
                 suffix="%"
                 label="Rely on traditional medicine"
                 sublabel="Population in developing nations (WHO)"
+                theme="inverted"
               />
             </div>
-            <div className="rounded-2xl border border-primary-700/30 bg-primary-800/40 p-6 backdrop-blur-sm">
+            <div className="rounded-2xl border border-primary-600/40 bg-primary-900/70 p-6 backdrop-blur-sm">
               <AnimatedCounter
                 end={50000}
                 suffix="+"
                 label="Medicinal plant species"
                 sublabel="Documented worldwide"
+                theme="inverted"
               />
             </div>
-            <div className="rounded-2xl border border-primary-700/30 bg-primary-800/40 p-6 backdrop-blur-sm">
+            <div className="rounded-2xl border border-primary-600/40 bg-primary-900/70 p-6 backdrop-blur-sm">
               <AnimatedCounter
                 end={4}
                 suffix="B"
                 label="Lack essential health services"
                 sublabel="People globally"
+                theme="inverted"
               />
             </div>
-            <div className="rounded-2xl border border-primary-700/30 bg-primary-800/40 p-6 backdrop-blur-sm">
+            <div className="rounded-2xl border border-primary-600/40 bg-primary-900/70 p-6 backdrop-blur-sm">
               <AnimatedCounter
                 end={25}
                 suffix="%"
                 label="Modern drugs from plants"
                 sublabel="Derived from rainforest species"
+                theme="inverted"
               />
             </div>
           </div>
