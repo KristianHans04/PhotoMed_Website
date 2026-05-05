@@ -1,0 +1,23 @@
+[
+  {
+    "citation": "World Health Organization (2019)",
+    "title": "WHO Global Report on Traditional and Complementary Medicine",
+    "finding": "An estimated 88% of WHO member states acknowledge traditional medicine use. In Africa, up to 80% of the population relies on it for primary healthcare.",
+    "sourceUrl": "https://www.who.int/publications/i/item/978924151536",
+    "publisher": "World Health Organization"
+  },
+  {
+    "citation": "Fabricant & Farnsworth, Environmental Health Perspectives (2001)",
+    "title": "The Value of Plants Used in Traditional Medicine for Drug Discovery",
+    "finding": "Around 25% of modern drugs are derived from plants first used traditionally, while many plant species remain understudied pharmacologically.",
+    "sourceUrl": "https://ehp.niehs.nih.gov/doi/full/10.1289/ehp.01109s169",
+    "publisher": "Environmental Health Perspectives"
+  },
+  {
+    "citation": "Saslis-Lagoudakis et al., PNAS (2012)",
+    "title": "Phylogenies Reveal Predictive Power of Traditional Medicine",
+    "finding": "Cross-cultural evidence shows related plants are used for similar conditions across different regions, supporting consistency in traditional knowledge systems.",
+    "sourceUrl": "https://www.pnas.org/doi/10.1073/pnas.1202242109",
+    "publisher": "Proceedings of the National Academy of Sciences"
+  }
+]

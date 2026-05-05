@@ -13,7 +13,6 @@ export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Download', href: '/download' },
   { label: 'Donate', href: '/donate' },
   { label: 'Contact', href: '/contact' },
 ] as const

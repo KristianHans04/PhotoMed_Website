@@ -8,6 +8,7 @@ interface ApkMeta {
   updatedAt: string | null
   sizeBytes: number | null
   available: boolean
+  fallback?: boolean
 }
 
 export default function Download() {
@@ -63,6 +64,11 @@ export default function Download() {
                     <p className="mt-3 text-sm text-primary-300/70">
                       {meta.version ? `Version ${meta.version}` : 'Latest version'}
                       {meta.sizeBytes ? ` — ${(meta.sizeBytes / 1024 / 1024).toFixed(1)} MB` : ''}
+                    </p>
+                  )}
+                  {meta?.fallback && (
+                    <p className="mt-3 text-sm text-primary-300/70">
+                      Download is currently using the packaged APK fallback.
                     </p>
                   )}
                 </div>

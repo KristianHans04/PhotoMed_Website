@@ -1,34 +1,29 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { AnimatedBlock, Section } from '@/components/ui/Section'
-import Button from '@/components/ui/Button'
 
-const posts = [
-  {
-    title: 'How we evaluate traditional medicine research before publication',
-    excerpt:
-      'Our editorial process for selecting studies, validating context, and presenting findings clearly to non-technical readers.',
-    date: 'May 2026',
-    category: 'Research Process',
-    href: '/research',
-  },
-  {
-    title: 'Preserving medicinal plant knowledge across generations',
-    excerpt:
-      'Why documentation matters, and how digital products can support local knowledge continuity.',
-    date: 'May 2026',
-    category: 'Field Notes',
-    href: '/research',
-  },
-  {
-    title: 'Designing trust in health knowledge products',
-    excerpt:
-      'The product and communication principles we use to make guidance understandable and responsible.',
-    date: 'May 2026',
-    category: 'Product',
-    href: '/research',
-  },
-]
+interface BlogPostSummary {
+  slug: string
+  title: string
+  excerpt: string
+  author: string
+  date: string
+  readingTime: string
+  category: string
+  coverImage: string
+}
 
 export default function BlogPage() {
+  const [posts, setPosts] = useState<BlogPostSummary[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('/content/blog-posts.json')
+      .then((res) => res.json() as Promise<BlogPostSummary[]>)
+      .then((data) => setPosts(data))
+      .finally(() => setLoading(false))
+  }, [])
+
   return (
     <>
       <section className="relative overflow-hidden bg-primary-950 py-24 md:py-32">
@@ -43,10 +38,10 @@ export default function BlogPage() {
                 Blog
               </span>
               <h1 className="mt-4 text-4xl font-extrabold text-white sm:text-5xl">
-                Insights, research, and updates
+                Stories and product insights
               </h1>
               <p className="mt-6 text-lg text-primary-200/80">
-                Rolling articles on traditional medicine research, product updates, and field learning.
+                Research process, field learnings, and practical updates from the PhotoMed team.
               </p>
             </div>
           </AnimatedBlock>
@@ -54,24 +49,43 @@ export default function BlogPage() {
       </section>
 
       <Section>
-        <div className="grid gap-6 md:grid-cols-3">
-          {posts.map((post, i) => (
-            <AnimatedBlock key={post.title} delay={i * 120}>
-              <article className="flex h-full flex-col rounded-2xl border border-primary-100 bg-white p-6 shadow-sm">
-                <p className="text-xs font-medium uppercase tracking-wider text-primary-600">
-                  {post.category} · {post.date}
-                </p>
-                <h2 className="mt-3 text-lg font-bold text-text-primary">{post.title}</h2>
-                <p className="mt-3 flex-1 text-sm text-text-muted">{post.excerpt}</p>
-                <div className="mt-5">
-                  <Button href={post.href} variant="outline" size="sm">
-                    Read article
-                  </Button>
-                </div>
-              </article>
-            </AnimatedBlock>
-          ))}
-        </div>
+        {loading ? (
+          <div className="text-center text-text-muted">Loading articles...</div>
+        ) : (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post, i) => (
+              <AnimatedBlock key={post.slug} delay={i * 100}>
+                <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-primary-100 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                  <div className="overflow-hidden">
+                    <img
+                      src={post.coverImage}
+                      alt={post.title}
+                      className="aspect-[16/10] w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="text-xs font-medium uppercase tracking-wider text-primary-600">
+                      {post.category}
+                    </p>
+                    <h2 className="mt-2 text-xl font-bold text-text-primary">{post.title}</h2>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-text-muted">{post.excerpt}</p>
+                    <div className="mt-5 flex items-center justify-between text-xs text-text-muted">
+                      <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
+                      <span>{post.readingTime}</span>
+                    </div>
+                    <Link
+                      to={`/blog/${post.slug}`}
+                      className="mt-5 inline-flex items-center text-sm font-semibold text-primary-700 transition-colors hover:text-primary-800"
+                    >
+                      Read article
+                    </Link>
+                  </div>
+                </article>
+              </AnimatedBlock>
+            ))}
+          </div>
+        )}
       </Section>
     </>
   )

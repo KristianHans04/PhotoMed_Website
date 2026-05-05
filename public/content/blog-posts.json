@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "how-we-review-research",
+    "title": "How we review traditional medicine research before publication",
+    "excerpt": "Our internal process for selecting studies, verifying context, and presenting findings responsibly.",
+    "author": "PhotoMed Editorial",
+    "date": "2026-05-03",
+    "readingTime": "6 min read",
+    "category": "Research Process",
+    "coverImage": "/images/vegetation-dense.webp",
+    "content": [
+      "PhotoMed reviews research with one goal: make knowledge useful without overstating certainty. We prioritize peer-reviewed publications and institutional reports, then cross-check claims against independent sources.",
+      "Every article is written in plain language first, then reviewed for scientific precision. When evidence is limited, we state that directly. We avoid absolute wording and avoid making clinical promises.",
+      "Our approach is to preserve and contextualize documented knowledge. We do not publish treatment instructions as medical advice, and we always include safety framing where appropriate."
+    ]
+  },
+  {
+    "slug": "preserving-knowledge-across-generations",
+    "title": "Preserving medicinal plant knowledge across generations",
+    "excerpt": "Why documentation quality is as important as documentation quantity.",
+    "author": "PhotoMed Team",
+    "date": "2026-05-02",
+    "readingTime": "5 min read",
+    "category": "Field Notes",
+    "coverImage": "/images/community-3.webp",
+    "content": [
+      "Traditional plant knowledge is often transmitted orally. As communities urbanize and elders pass on, critical context can disappear quickly if it is not documented carefully.",
+      "We focus on preserving not just names of plants, but context: local usage, preparation practices, known cautions, and regional relevance. Context is what makes information usable.",
+      "Digitization should support communities, not replace them. The goal is continuity: helping knowledge remain available, legible, and useful to future generations."
+    ]
+  },
+  {
+    "slug": "designing-trust-in-health-products",
+    "title": "Designing trust in health knowledge products",
+    "excerpt": "Product choices that make health information clearer and more responsible.",
+    "author": "Product at PhotoMed",
+    "date": "2026-05-01",
+    "readingTime": "7 min read",
+    "category": "Product",
+    "coverImage": "/images/community-1.webp",
+    "content": [
+      "Trust starts with clarity. We keep interfaces simple, label confidence, and avoid overstating certainty. Users should understand what the system knows and where caution is needed.",
+      "Responsible design also means reducing friction in critical moments: straightforward flows, readable copy, and immediate access to important context.",
+      "Our product philosophy is practical: useful information, clear limits, and a respectful bridge between documented traditional knowledge and modern digital access."
+    ]
+  }
+]

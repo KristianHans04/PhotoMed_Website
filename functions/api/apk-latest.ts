@@ -7,7 +7,9 @@ interface Env {
 
 export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
   const url = new URL(request.url)
-  const downloadUrl = env.APK_DOWNLOAD_URL?.trim() || ''
+  const configuredUrl = env.APK_DOWNLOAD_URL?.trim() || ''
+  const fallbackRelativeUrl = '/downloads/photomed-latest.apk'
+  const downloadUrl = configuredUrl || fallbackRelativeUrl
   const isMetaRequest = url.searchParams.get('meta') === '1'
 
   const metaResponse = {
@@ -15,6 +17,7 @@ export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
     version: env.APK_VERSION || null,
     updatedAt: env.APK_UPDATED_AT || null,
     sizeBytes: env.APK_SIZE_BYTES ? Number.parseInt(env.APK_SIZE_BYTES, 10) : null,
+    fallback: !configuredUrl,
   }
 
   if (isMetaRequest) {
@@ -27,19 +30,9 @@ export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
     })
   }
 
-  if (!downloadUrl) {
-    return new Response(JSON.stringify({ error: 'APK download is not configured yet.' }), {
-      status: 503,
-      headers: {
-        'Content-Type': 'application/json',
-        'Cache-Control': 'no-store',
-      },
-    })
-  }
-
   let parsedUrl: URL
   try {
-    parsedUrl = new URL(downloadUrl)
+    parsedUrl = new URL(downloadUrl, url.origin)
   } catch {
     return new Response(JSON.stringify({ error: 'Invalid APK download URL configuration.' }), {
       status: 500,

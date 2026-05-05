@@ -1,31 +1,26 @@
+import { useEffect, useState } from 'react'
 import { AnimatedBlock, Section } from '@/components/ui/Section'
 import Button from '@/components/ui/Button'
 
-const references = [
-  {
-    citation: 'World Health Organization (2019)',
-    title: 'WHO Global Report on Traditional and Complementary Medicine',
-    finding:
-      'An estimated 88% of WHO member states acknowledge traditional medicine use. In Africa, up to 80% of the population relies on it for primary healthcare.',
-    link: 'https://www.who.int/publications/i/item/978924151536',
-  },
-  {
-    citation: 'Fabricant & Farnsworth, Environmental Health Perspectives (2001)',
-    title: 'The Value of Plants Used in Traditional Medicine for Drug Discovery',
-    finding:
-      'Around 25% of modern drugs are derived from plants first used traditionally, while a large share of plant species remain understudied pharmacologically.',
-    link: 'https://ehp.niehs.nih.gov/doi/full/10.1289/ehp.01109s169',
-  },
-  {
-    citation: 'Saslis-Lagoudakis et al., PNAS (2012)',
-    title: 'Phylogenies Reveal Predictive Power of Traditional Medicine',
-    finding:
-      'Cross-cultural evidence shows related plants are used for similar conditions across different regions, supporting the consistency of traditional knowledge systems.',
-    link: 'https://www.pnas.org/doi/10.1073/pnas.1202242109',
-  },
-]
+interface ResearchEntry {
+  citation: string
+  title: string
+  finding: string
+  sourceUrl: string
+  publisher: string
+}
 
 export default function ResearchPage() {
+  const [items, setItems] = useState<ResearchEntry[]>([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetch('/content/research.json')
+      .then((res) => res.json() as Promise<ResearchEntry[]>)
+      .then((data) => setItems(data))
+      .finally(() => setLoading(false))
+  }, [])
+
   return (
     <>
       <section className="relative overflow-hidden bg-primary-950 py-24 md:py-32">
@@ -37,13 +32,13 @@ export default function ResearchPage() {
           <AnimatedBlock>
             <div className="mx-auto max-w-3xl text-center">
               <span className="text-sm font-semibold uppercase tracking-wider text-primary-400">
-                Research Library
+                Research
               </span>
               <h1 className="mt-4 text-4xl font-extrabold text-white sm:text-5xl">
-                Evidence behind our mission
+                Source-backed references
               </h1>
               <p className="mt-6 text-lg text-primary-200/80">
-                A curated list of research used to guide product direction and safety context.
+                Publications and reports that inform PhotoMed’s framing and product decisions.
               </p>
             </div>
           </AnimatedBlock>
@@ -51,22 +46,27 @@ export default function ResearchPage() {
       </section>
 
       <Section>
-        <div className="grid gap-6 md:grid-cols-3">
-          {references.map((item, i) => (
-            <AnimatedBlock key={item.title} delay={i * 120}>
-              <article className="flex h-full flex-col rounded-2xl border border-primary-100 bg-white p-6 shadow-sm">
-                <p className="text-xs font-medium uppercase tracking-wider text-primary-600">{item.citation}</p>
-                <h2 className="mt-3 text-lg font-bold text-text-primary">{item.title}</h2>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-text-muted">{item.finding}</p>
-                <div className="mt-5">
-                  <Button href={item.link} external variant="outline" size="sm">
-                    Read source
-                  </Button>
-                </div>
-              </article>
-            </AnimatedBlock>
-          ))}
-        </div>
+        {loading ? (
+          <div className="text-center text-text-muted">Loading references...</div>
+        ) : (
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {items.map((item, i) => (
+              <AnimatedBlock key={item.title} delay={i * 100}>
+                <article className="flex h-full flex-col rounded-2xl border border-primary-100 bg-white p-6 shadow-sm">
+                  <p className="text-xs font-medium uppercase tracking-wider text-primary-600">{item.publisher}</p>
+                  <h2 className="mt-3 text-lg font-bold text-text-primary">{item.title}</h2>
+                  <p className="mt-2 text-xs text-text-muted">{item.citation}</p>
+                  <p className="mt-4 flex-1 text-sm leading-relaxed text-text-muted">{item.finding}</p>
+                  <div className="mt-5">
+                    <Button href={item.sourceUrl} external variant="outline" size="sm">
+                      Open source
+                    </Button>
+                  </div>
+                </article>
+              </AnimatedBlock>
+            ))}
+          </div>
+        )}
       </Section>
     </>
   )

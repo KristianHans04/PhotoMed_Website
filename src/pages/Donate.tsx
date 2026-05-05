@@ -3,11 +3,13 @@ import { Section, AnimatedBlock } from '@/components/ui/Section'
 
 export default function Donate() {
   const [amount, setAmount] = useState('')
+  const [email, setEmail] = useState('')
   const [isProcessing, setIsProcessing] = useState(false)
 
   function handleDonate() {
     const parsedAmount = Number.parseInt(amount, 10)
-    if (!parsedAmount || parsedAmount < 1) return
+    const normalizedEmail = email.trim()
+    if (!parsedAmount || parsedAmount < 1 || !normalizedEmail) return
 
     setIsProcessing(true)
 
@@ -18,14 +20,14 @@ export default function Donate() {
     if (!handler) {
       const script = document.createElement('script')
       script.src = 'https://js.paystack.co/v1/inline.js'
-      script.onload = () => initPaystack(parsedAmount * 100)
+      script.onload = () => initPaystack(parsedAmount * 100, normalizedEmail)
       document.head.appendChild(script)
     } else {
-      initPaystack(parsedAmount * 100)
+      initPaystack(parsedAmount * 100, normalizedEmail)
     }
   }
 
-  function initPaystack(amountInKobo: number) {
+  function initPaystack(amountInKobo: number, donorEmail: string) {
     const PaystackPop = (window as unknown as Record<string, unknown>).PaystackPop as {
       setup: (config: Record<string, unknown>) => { openIframe: () => void }
     }
@@ -34,7 +36,7 @@ export default function Donate() {
       key: 'pk_test_ea98efd53a7531a0b94d9c527bd277df3c0e2585',
       amount: amountInKobo,
       currency: 'KES',
-      email: '',
+      email: donorEmail,
       metadata: {
         custom_fields: [{ display_name: 'Donation', variable_name: 'donation', value: 'PhotoMed Platform' }],
       },
@@ -79,9 +81,19 @@ export default function Donate() {
           <AnimatedBlock>
             <div className="rounded-2xl border border-primary-100 bg-white p-6 shadow-sm md:p-10">
               <h2 className="text-2xl font-bold text-text-primary">Enter donation amount</h2>
-              <p className="mt-2 text-sm text-text-muted">Payments are securely processed through Paystack.</p>
 
               <div className="mt-8">
+                <label className="text-sm font-medium text-text-secondary">Email</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  className="mt-2 w-full rounded-xl border border-primary-200 bg-white px-4 py-3.5 text-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+                />
+              </div>
+
+              <div className="mt-6">
                 <label className="text-sm font-medium text-text-secondary">Amount (KES)</label>
                 <div className="mt-2 flex items-center gap-3">
                   <span className="text-sm font-semibold text-text-muted">KES</span>
@@ -98,15 +110,11 @@ export default function Donate() {
 
               <button
                 onClick={handleDonate}
-                disabled={isProcessing || !amount}
+                disabled={isProcessing || !amount || !email}
                 className="mt-8 w-full rounded-xl bg-primary-700 px-6 py-4 text-base font-semibold text-white transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/20 disabled:opacity-50"
               >
                 {isProcessing ? 'Processing...' : `Donate KES ${amount || '0'}`}
               </button>
-
-              <p className="mt-4 text-center text-xs text-text-muted">
-                Your payment details are handled by Paystack and are not stored by PhotoMed.
-              </p>
             </div>
           </AnimatedBlock>
         </div>
