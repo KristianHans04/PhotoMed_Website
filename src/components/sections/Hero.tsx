@@ -40,22 +40,6 @@ export default function Hero() {
                 className="aspect-[4/3] w-full rounded-2xl object-cover"
                 loading="eager"
               />
-
-              <div className="absolute -bottom-10 left-4 hidden sm:block">
-                <PhoneFrame
-                  src="/images/app-screen-plantid.webp"
-                  alt="PhotoMed plant identification screen"
-                  size="sm"
-                />
-              </div>
-
-              <div className="absolute -top-8 right-4 hidden xl:block">
-                <PhoneFrame
-                  src="/images/app-screen-chat.webp"
-                  alt="PhotoMed guidance screen"
-                  size="sm"
-                />
-              </div>
             </div>
           </div>
         </div>
