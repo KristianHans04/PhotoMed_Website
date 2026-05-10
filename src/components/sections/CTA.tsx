@@ -54,7 +54,7 @@ export default function CTA() {
           <div className="lg:col-span-3">
             <AnimatedBlock delay={200}>
               <h2 className="text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
-                There is significant work ahead. Funding, partnerships, and community are what makes it possible.
+                Help us map the world's medicinal vegetation and put it in the hands of the people who need it.
               </h2>
               <p className="mt-6 text-lg text-text-muted leading-relaxed">
                 Every contribution funds the mapping of more vegetation, the expansion of

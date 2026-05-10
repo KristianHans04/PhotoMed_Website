@@ -15,7 +15,7 @@ export default function Hero() {
         <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-              Access to plant-based remedies should not depend on where you live.
+              PhotoMed finds the medicinal plants nearest to you that can treat your symptoms — and tells you exactly how to use them.
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-100/90 sm:text-xl">
               PhotoMed uses AI to match your symptoms to medicinal plants near
@@ -37,18 +37,6 @@ export default function Hero() {
               >
                 Support the Mission
               </a>
-            </div>
-
-            <div className="mt-14 flex items-center gap-8 text-sm text-primary-200/70">
-              <div>
-                <span className="block text-2xl font-bold text-white">57%</span>
-                of Africans lack access to essential medicines (WHO)
-              </div>
-              <div className="h-10 w-px bg-primary-400/30" />
-              <div>
-                <span className="block text-2xl font-bold text-white">12+ hrs</span>
-                average wait time in many public hospitals
-              </div>
             </div>
           </div>
         </div>
