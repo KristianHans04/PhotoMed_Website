@@ -18,9 +18,9 @@ export default function Impact() {
           <AnimatedBlock>
             <div className="text-center">
               <h2 className="text-3xl font-bold text-white sm:text-4xl">
-                Traditional medicine is not alternative.
+                The healthcare gap is massive.
                 <br />
-                <span className="text-primary-300">For billions, it is the only option.</span>
+                <span className="text-primary-300">The remedy is literally growing around us.</span>
               </h2>
             </div>
           </AnimatedBlock>
@@ -88,15 +88,16 @@ export default function Impact() {
                 We are not replacing modern healthcare.
               </h3>
               <p className="mt-4 text-text-muted leading-relaxed">
-                We are preserving and digitizing centuries of ethnobotanical knowledge so that
-                communities without reliable hospital access can make informed decisions about
-                the plants growing in their own environments.
+                We are not replacing modern healthcare. We are decongesting hospitals by giving
+                people a way to treat everyday symptoms — headaches, coughs, burns, stomach aches —
+                using the plants that have worked for generations and are growing in their
+                own communities right now.
               </p>
               <p className="mt-4 text-text-muted leading-relaxed">
                 PhotoMed always recommends seeking professional medical help for serious or
-                persistent conditions. Traditional plant knowledge and clinical medicine are
+                persistent conditions. Plant-based symptom relief and clinical medicine are
                 not in competition. They are complementary — and for the billions without
-                hospital access, traditional knowledge is the critical first line.
+                hospital access, this is the critical first line.
               </p>
               <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="rounded-xl bg-surface-dim p-4">

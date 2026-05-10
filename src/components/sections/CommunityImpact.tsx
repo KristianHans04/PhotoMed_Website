@@ -10,12 +10,12 @@ const communityImages = [
   {
     src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=80',
     alt: 'Community health workers in a field setting',
-    caption: 'Community health workers document local plant species for digital preservation.',
+    caption: 'Community health workers helping people identify local medicinal plants.',
   },
   {
     src: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=900&q=80',
     alt: 'Hands holding a young plant seedling in soil',
-    caption: 'Every plant holds centuries of accumulated healing knowledge waiting to be preserved.',
+    caption: 'The remedies people need are growing in fields and gardens around them.',
   },
   {
     src: 'https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=900&q=80',
@@ -78,13 +78,14 @@ export default function CommunityImpact() {
               </span>
               <h2 className="mt-3 text-3xl font-bold text-text-primary sm:text-4xl">
                 For millions, the choice between
-                <span className="text-primary-700"> traditional medicine and nothing</span> is not a choice at all
+                <span className="text-primary-700"> a plant-based remedy and nothing</span> is not a choice at all
               </h2>
               <p className="mt-6 text-text-muted leading-relaxed">
                 In the communities where PhotoMed operates, hospitals can be a full day's journey away.
                 Pharmaceutical drugs cost more than a week's income. The plants growing on the
                 roadside — the same plants their grandmothers used — are often the only option available.
-                We are not romanticizing this reality. We are building tools to make it safer.
+                We are not romanticizing this reality. We are building tools to make it safer, faster,
+                and more reliable.
               </p>
             </AnimatedBlock>
 

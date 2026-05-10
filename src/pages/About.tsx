@@ -17,12 +17,12 @@ export default function About() {
           <AnimatedBlock>
             <div className="mx-auto max-w-3xl text-center">
               <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-                We are building the world's first
-                <span className="text-primary-300"> trusted digital platform</span> for traditional plant medicine
+                We are mapping the world's vegetation
+                <span className="text-primary-300"> so no one has to suffer waiting for medicine that's already growing around them</span>
               </h1>
               <p className="mt-6 text-lg text-primary-200/80 leading-relaxed">
-                PhotoMed exists because the knowledge that billions of people rely on for
-                healthcare is being lost faster than it is being documented. We are reversing that.
+                PhotoMed is an AI-powered mobile tool that treats everyday symptoms using
+                medicinal plants found near you. Think of it as a GPS for natural remedies.
               </p>
             </div>
           </AnimatedBlock>
@@ -35,7 +35,7 @@ export default function About() {
           <div className="relative">
             <img
               src="/images/community-3.webp"
-              alt="Traditional healer preparing medicinal herbs in a rural community"
+              alt="People waiting outside a rural health clinic"
               className="h-full min-h-[300px] w-full object-cover lg:min-h-[500px]"
               loading="lazy"
             />
@@ -45,24 +45,23 @@ export default function About() {
             <AnimatedBlock>
               <div>
                 <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
-                  Ancient knowledge is disappearing
+                  The healthcare system was not built for everyone
                 </h2>
                 <div className="mt-6 space-y-4 text-text-muted leading-relaxed">
                   <p>
-                    The World Health Organization estimates that 80% of the population in developing
-                    countries depends on traditional medicine for their primary healthcare needs.
-                    This is not a choice driven by preference. It is driven by the absence of
-                    alternatives.
+                    In sub-Saharan Africa, the doctor-to-patient ratio is 1 to 5,000. Patients
+                    wait 12 or more hours to be seen. When they get in, basic medicines are often
+                    out of stock. The WHO estimates that 57% of Africans lack reliable access to
+                    essential medicines.
                   </p>
                   <p>
-                    Hospitals are hours away. Pharmaceuticals are unaffordable. But the plants that
-                    have treated these communities for centuries still grow in the fields, forests,
-                    and roadsides around them.
+                    But here is what most people do not realize: the plants that have treated headaches,
+                    stomach aches, burns, coughs, and fevers for generations are still growing in
+                    the gardens, fields, and roadsides around these communities. The remedies exist.
+                    People just need help finding and using them safely.
                   </p>
                   <p>
-                    The problem is not that the medicine does not exist. The problem is that the
-                    knowledge of what to use, when, and how is concentrated in aging practitioners
-                    with no digital documentation. When they pass, their knowledge vanishes with them.
+                    That is exactly what PhotoMed does.
                   </p>
                 </div>
               </div>
@@ -78,25 +77,25 @@ export default function About() {
             <AnimatedBlock>
               <div>
                 <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
-                  Technology as a preservation tool
+                  Your symptoms. The nearest plant. How to prepare it.
                 </h2>
                 <div className="mt-6 space-y-4 text-text-muted leading-relaxed">
                   <p>
-                    PhotoMed digitizes, validates, and distributes traditional plant medicine
-                    knowledge through a mobile platform accessible to anyone with a smartphone.
+                    Tell our AI chatbot what you are feeling. "I have a headache and feel nauseous."
+                    It identifies which medicinal plants can help, finds the closest one to your GPS
+                    location, gives you walking directions, and tells you how to prepare the remedy —
+                    whether that means chewing the leaf, boiling it into tea, or applying it directly.
                   </p>
                   <p>
-                    We combine AI-powered plant identification, symptom-to-remedy matching, and
-                    geospatial plant mapping into a single application. Users can photograph a
-                    plant to learn its medicinal properties, describe their symptoms to receive
-                    plant-based guidance, or navigate a map to find verified medicinal plant
-                    locations near them.
+                    When you arrive at the plant, point your camera at it. The AI confirms you have
+                    the right species and warns you if anything looks wrong. No guessing, no risk of
+                    picking a harmful look-alike.
                   </p>
                   <p>
-                    Every piece of information is cross-referenced against published ethnobotanical
-                    research. Every recommendation carries safety context. We are not practicing
-                    medicine. We are preserving and distributing knowledge that already exists but
-                    is at risk of being permanently lost.
+                    PhotoMed is not replacing doctors or pharmaceutical companies. We are decongesting
+                    hospitals by handling the everyday symptoms — headaches, colds, minor burns,
+                    stomach aches — that do not require a prescription. If symptoms persist or are
+                    serious, we always recommend professional medical care.
                   </p>
                 </div>
               </div>
@@ -105,7 +104,7 @@ export default function About() {
           <div className="relative order-1 lg:order-2">
             <img
               src="/images/community-2.webp"
-              alt="Young person using smartphone to identify plants in rural East Africa"
+              alt="Person using smartphone near vegetation"
               className="h-full min-h-[300px] w-full object-cover lg:min-h-[500px]"
               loading="lazy"
             />
@@ -119,6 +118,9 @@ export default function About() {
           <AnimatedBlock>
             <div className="text-center">
               <h2 className="text-3xl font-bold text-white sm:text-4xl">The Path Forward</h2>
+              <p className="mx-auto mt-4 max-w-2xl text-primary-200/70">
+                We are building the infrastructure for plant-based symptom relief at scale.
+              </p>
             </div>
           </AnimatedBlock>
 
@@ -126,11 +128,11 @@ export default function About() {
             <AnimatedBlock delay={100}>
               <div className="rounded-2xl border border-primary-700/30 bg-primary-800/40 p-8">
                 <div className="text-5xl font-black text-primary-500/50">01</div>
-                <h3 className="mt-4 text-xl font-bold text-white">Preserve</h3>
+                <h3 className="mt-4 text-xl font-bold text-white">Map</h3>
                 <p className="mt-3 text-sm text-primary-200/70 leading-relaxed">
-                  Document and digitize traditional plant medicine knowledge before it disappears.
-                  Build the largest ethnobotanical dataset in the world. Work directly with
-                  community healers and botanical researchers.
+                  Map the world's vegetation the way Google Street View mapped every street.
+                  Build the most comprehensive geospatial database of medicinal plant locations
+                  on the planet. Community-sourced, AI-verified, continuously updated.
                 </p>
               </div>
             </AnimatedBlock>
@@ -138,11 +140,11 @@ export default function About() {
             <AnimatedBlock delay={200}>
               <div className="rounded-2xl border border-primary-700/30 bg-primary-800/40 p-8">
                 <div className="text-5xl font-black text-primary-500/50">02</div>
-                <h3 className="mt-4 text-xl font-bold text-white">Validate</h3>
+                <h3 className="mt-4 text-xl font-bold text-white">Connect</h3>
                 <p className="mt-3 text-sm text-primary-200/70 leading-relaxed">
-                  Cross-reference community knowledge with published research. Apply AI verification
-                  and expert botanical review to ensure accuracy and safety. No unverified claims
-                  reach users.
+                  Connect every person's symptoms to a verified, nearby, plant-based remedy.
+                  Cross-reference community knowledge with published ethnobotanical research.
+                  Make the tool work offline for the connectivity constraints of rural areas.
                 </p>
               </div>
             </AnimatedBlock>
@@ -150,11 +152,11 @@ export default function About() {
             <AnimatedBlock delay={300}>
               <div className="rounded-2xl border border-primary-700/30 bg-primary-800/40 p-8">
                 <div className="text-5xl font-black text-primary-500/50">03</div>
-                <h3 className="mt-4 text-xl font-bold text-white">Distribute</h3>
+                <h3 className="mt-4 text-xl font-bold text-white">Scale</h3>
                 <p className="mt-3 text-sm text-primary-200/70 leading-relaxed">
-                  Make this knowledge accessible to anyone with a smartphone. Offline-capable,
-                  region-aware, and designed for the connectivity constraints of rural areas.
-                  Scale across East Africa and beyond.
+                  Expand across the continent and beyond. Cover more plant species, more symptoms,
+                  more languages. Our long-term vision includes extending the system to veterinary
+                  care — treating livestock and pets with the same plant-based approach.
                 </p>
               </div>
             </AnimatedBlock>

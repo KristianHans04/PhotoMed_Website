@@ -86,22 +86,6 @@ export default function BlogPage() {
 
   return (
     <>
-      <section className="bg-primary-950 py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedBlock>
-            <div className="mx-auto max-w-3xl">
-              <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-                Newsroom
-              </h1>
-              <p className="mt-6 text-lg text-primary-200/80">
-                Research, field learnings, product updates, and insights from the
-                intersection of traditional medicine and technology.
-              </p>
-            </div>
-          </AnimatedBlock>
-        </div>
-      </section>
-
       <Section>
         <AnimatedBlock>
           <div className="flex flex-wrap gap-2">

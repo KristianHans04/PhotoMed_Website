@@ -4,32 +4,32 @@ import PhoneFrame from '@/components/ui/PhoneFrame'
 
 const steps = [
   {
-    id: 'capture',
-    title: 'Capture what you see',
-    body: 'Take a photo of a plant in your environment. PhotoMed turns everyday plant encounters into reliable medicinal context in seconds.',
-    image: '/images/app-screen-plantid.webp',
-    caption: 'Plant identification on the PhotoMed app',
-  },
-  {
-    id: 'guidance',
-    title: 'Get contextual guidance',
-    body: 'Describe symptoms in plain language. PhotoMed provides structured guidance grounded in documented traditional use and safety notes.',
+    id: 'symptoms',
+    title: 'Tell us what you are feeling',
+    body: 'Open the app and describe your symptoms in plain language. The AI may ask follow-up questions or request a photo to better understand your situation.',
     image: '/images/app-screen-chat.webp',
-    caption: 'Symptom guidance in the PhotoMed assistant',
+    caption: 'Symptom input on the PhotoMed app',
   },
   {
-    id: 'discover',
-    title: 'Discover nearby medicinal flora',
-    body: 'Explore regional plant discovery to understand what grows near you and where traditional medicine knowledge is still actively used.',
+    id: 'remedy',
+    title: 'Get matched to a remedy',
+    body: 'The AI identifies which medicinal plants can treat your symptoms and tells you exactly how to prepare them — chew, boil, brew, or apply.',
+    image: '/images/app-screen-plantid.webp',
+    caption: 'Remedy recommendation in PhotoMed',
+  },
+  {
+    id: 'navigate',
+    title: 'Navigate to the nearest plant',
+    body: 'PhotoMed cross-references your GPS location with our vegetation map and directs you to the closest available plant with step-by-step directions.',
     image: '/images/app-screen-map.webp',
-    caption: 'Nearby medicinal plant discovery map',
+    caption: 'Plant location and navigation map',
   },
   {
-    id: 'community',
-    title: 'Connect knowledge to people',
-    body: 'PhotoMed helps preserve intergenerational knowledge by connecting field observations, local context, and practical access.',
+    id: 'confirm',
+    title: 'Confirm the right plant',
+    body: 'Point your camera at the plant when you arrive. The AI verifies the species match and flags any safety concerns before you pick anything.',
     image: '/images/community-2.webp',
-    caption: 'Community-centered use of PhotoMed',
+    caption: 'Visual confirmation of the correct plant',
   },
 ]
 
@@ -64,10 +64,10 @@ export default function StickyScrollSection() {
                 Product Journey
               </span>
               <h2 className="mt-3 text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
-                How people use PhotoMed
+                From symptoms to remedy
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-text-muted">
-                A simple flow designed to keep medicinal plant knowledge understandable, accessible, and useful.
+                A practical flow that connects your symptoms to the nearest plant that can help.
               </p>
             </div>
           </AnimatedBlock>

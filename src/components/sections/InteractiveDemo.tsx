@@ -3,22 +3,22 @@ import { AnimatedBlock } from '@/components/ui/Section'
 
 const slides = [
   {
-    name: 'Plant Identification',
-    image: '/images/app-screen-plantid.webp',
-    summary: 'Capture a plant image and get instant medicinal context.',
-    outcomes: ['Species match', 'Medicinal use context', 'Safety notes'],
-  },
-  {
-    name: 'Symptom Guidance',
+    name: 'Describe your symptoms',
     image: '/images/app-screen-chat.webp',
-    summary: 'Describe symptoms and receive structured guidance.',
-    outcomes: ['Conversation flow', 'Contextual recommendations', 'Safety boundaries'],
+    summary: '"I have a headache and feel nauseous." The AI asks follow-up questions to narrow down the best remedy.',
+    outcomes: ['Plain language input', 'Follow-up questions for accuracy', 'Image upload for visual symptoms'],
   },
   {
-    name: 'Nearby Discovery',
+    name: 'Get a plant-based remedy',
+    image: '/images/app-screen-plantid.webp',
+    summary: 'The AI recommends specific plants and tells you how to prepare them — chew, boil, or apply.',
+    outcomes: ['Matched to your symptoms', 'Preparation instructions', 'Safety warnings included'],
+  },
+  {
+    name: 'Navigate to the nearest plant',
     image: '/images/app-screen-map.webp',
-    summary: 'Browse medicinal plant discovery in your region.',
-    outcomes: ['Regional discovery points', 'Map-based exploration', 'Practical access'],
+    summary: 'See where the recommended plant grows closest to you and get walking directions.',
+    outcomes: ['GPS-based plant locations', 'Step-by-step navigation', 'Community-verified sightings'],
   },
 ]
 
@@ -28,7 +28,7 @@ export default function InteractiveDemo() {
   useEffect(() => {
     const interval = window.setInterval(() => {
       setActive((prev) => (prev + 1) % slides.length)
-    }, 4000)
+    }, 5000)
     return () => window.clearInterval(interval)
   }, [])
 
@@ -40,10 +40,10 @@ export default function InteractiveDemo() {
         <AnimatedBlock>
           <div className="text-center">
             <h2 className="text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
-              See how it works
+              How PhotoMed works
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-text-muted">
-              Three core features that put traditional medicine knowledge in your hands.
+              From symptom to remedy in three steps. No appointment, no prescription, no waiting room.
             </p>
           </div>
         </AnimatedBlock>
@@ -62,7 +62,10 @@ export default function InteractiveDemo() {
                         : 'border-gray-200 bg-white text-text-muted hover:border-primary-200 hover:bg-primary-50/50'
                     }`}
                   >
-                    <p className="font-semibold">{slide.name}</p>
+                    <p className="font-semibold">
+                      <span className="mr-2 text-primary-600">{String(i + 1).padStart(2, '0')}</span>
+                      {slide.name}
+                    </p>
                     <p className="mt-1 text-sm opacity-80">{slide.summary}</p>
                   </button>
                 ))}
@@ -87,7 +90,7 @@ export default function InteractiveDemo() {
                 <div className="overflow-hidden rounded-[2rem] border border-gray-200 bg-white shadow-xl">
                   <img
                     src={current.image}
-                    alt={`${current.name} screen in PhotoMed`}
+                    alt={`${current.name} — PhotoMed app`}
                     className="aspect-[9/16] w-full object-cover"
                     loading="lazy"
                   />

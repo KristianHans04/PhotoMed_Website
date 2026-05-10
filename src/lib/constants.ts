@@ -1,8 +1,8 @@
 export const SITE_CONFIG = {
   name: 'PhotoMed',
-  tagline: 'AI-Powered Traditional Medicine',
+  tagline: 'AI-Powered Symptom Relief from Nature',
   description:
-    'Bridging centuries of ethnobotanical wisdom with modern artificial intelligence. Identify medicinal plants, get symptom-based remedy guidance, and discover healing flora in your region.',
+    'Feel sick? PhotoMed matches your symptoms to medicinal plants growing near you, directs you to the closest one, and tells you how to prepare the remedy. A faster, free alternative when hospitals are hours away.',
   url: 'https://photomed.kristianhans.com',
   contact: {
     email: 'support@photomed.app',

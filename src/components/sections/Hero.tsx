@@ -4,7 +4,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <img
           src="/images/community-1.webp"
-          alt="Communities preserving traditional medicinal plant knowledge"
+          alt="Community member using PhotoMed to find nearby medicinal plants"
           className="h-full w-full object-cover"
           loading="eager"
         />
@@ -15,14 +15,15 @@ export default function Hero() {
         <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-              Centuries of healing knowledge.
+              Feeling unwell?
               <br />
-              <span className="text-primary-300">One modern platform.</span>
+              <span className="text-primary-300">The remedy might be growing next to you.</span>
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-100/90 sm:text-xl">
-              PhotoMed preserves traditional plant medicine through AI-powered
-              identification, symptom guidance, and geospatial discovery — built for
-              the communities that depend on it most.
+              PhotoMed uses AI to match your symptoms to medicinal plants near
+              your location, shows you exactly where to find them, and tells you
+              how to prepare the remedy. A faster, free alternative when
+              hospitals are hours away.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -42,13 +43,13 @@ export default function Hero() {
 
             <div className="mt-14 flex items-center gap-8 text-sm text-primary-200/70">
               <div>
-                <span className="block text-2xl font-bold text-white">80%</span>
-                of Africa relies on traditional medicine
+                <span className="block text-2xl font-bold text-white">57%</span>
+                of Africans lack access to essential medicines (WHO)
               </div>
               <div className="h-10 w-px bg-primary-400/30" />
               <div>
-                <span className="block text-2xl font-bold text-white">5,000+</span>
-                documented medicinal plant species
+                <span className="block text-2xl font-bold text-white">12+ hrs</span>
+                average wait time in many public hospitals
               </div>
             </div>
           </div>

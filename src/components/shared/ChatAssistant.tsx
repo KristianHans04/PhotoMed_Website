@@ -7,13 +7,46 @@ interface Message {
   content: string
 }
 
+function renderMarkdown(text: string) {
+  // Split into paragraphs and render with basic formatting
+  const paragraphs = text.split(/\n\n+/)
+  return paragraphs.map((p, i) => {
+    // Handle line breaks within paragraphs
+    const lines = p.split('\n')
+    return (
+      <p key={i} className={i > 0 ? 'mt-2' : ''}>
+        {lines.map((line, j) => (
+          <span key={j}>
+            {j > 0 && <br />}
+            {renderInline(line)}
+          </span>
+        ))}
+      </p>
+    )
+  })
+}
+
+function renderInline(text: string) {
+  // Bold **text** and *italic*
+  const parts = text.split(/(\*\*.*?\*\*|\*.*?\*)/g)
+  return parts.map((part, i) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>
+    }
+    if (part.startsWith('*') && part.endsWith('*')) {
+      return <em key={i}>{part.slice(1, -1)}</em>
+    }
+    return <span key={i}>{part}</span>
+  })
+}
+
 export default function ChatAssistant() {
   const [isOpen, setIsOpen] = useState(false)
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'assistant',
       content:
-        'Welcome to PhotoMed. I can help you understand how our platform works, answer questions about traditional plant medicine, or guide you through the site. What would you like to know?',
+        'Welcome to PhotoMed. I can help you understand how our app treats everyday symptoms using medicinal plants near you, answer questions about the platform, or guide you through the site. What would you like to know?',
     },
   ])
   const [input, setInput] = useState('')
@@ -109,7 +142,7 @@ export default function ChatAssistant() {
                         : 'bg-surface-muted text-text-primary'
                     )}
                   >
-                    {msg.content}
+                    {msg.role === 'assistant' ? renderMarkdown(msg.content) : msg.content}
                   </div>
                 </div>
               ))}

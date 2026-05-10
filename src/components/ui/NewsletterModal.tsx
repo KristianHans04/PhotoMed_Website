@@ -71,7 +71,7 @@ export default function NewsletterModal() {
                 Stay informed
               </h3>
               <p className="mt-3 text-sm text-text-muted leading-relaxed">
-                Get a weekly roundup of traditional medicine research, product updates,
+                Get a weekly roundup of product updates, plant-based remedy research,
                 and stories from the communities we serve. No spam.
               </p>
 

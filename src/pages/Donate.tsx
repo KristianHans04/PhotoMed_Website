@@ -66,7 +66,8 @@ export default function Donate() {
                 Support PhotoMed
               </h1>
               <p className="mt-6 text-lg text-primary-200/80">
-                Contributions help us continue building and expanding access to traditional medicine knowledge.
+                Your contribution funds vegetation mapping, AI development, and
+                bringing this tool to communities where the nearest clinic is hours away.
               </p>
             </div>
           </AnimatedBlock>
