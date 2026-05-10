@@ -1,30 +1,25 @@
 import { Section, AnimatedBlock } from '@/components/ui/Section'
-import { Cpu, Database, Shield, Globe } from 'lucide-react'
 
 const techFeatures = [
   {
-    icon: Cpu,
-    title: 'Multi-Model AI Pipeline',
+    title: 'AI-Powered Symptom Matching',
     description:
-      'Plant identification is cross-validated through multiple AI systems and the PlantNet taxonomic database for maximum accuracy.',
+      'When you describe your symptoms, the AI cross-references ethnobotanical research and documented traditional practices to identify the plants most likely to help.',
   },
   {
-    icon: Database,
-    title: 'Geospatial Intelligence',
+    title: 'Geospatial Plant Location',
     description:
-      'PostGIS-powered spatial queries locate medicinal plants within walking distance, with community-contributed and expert-verified sighting data.',
+      'PhotoMed knows where medicinal plants grow. It cross-references your GPS coordinates against a continually growing vegetation database to find the closest available plant.',
   },
   {
-    icon: Shield,
-    title: 'Safety-First Architecture',
+    title: 'Camera Verification',
     description:
-      'Every recommendation includes safety ratings, contraindication checks, and clear guidance to seek professional medical help when appropriate.',
+      'Before you pick anything, point your camera at the plant. The AI confirms the species and flags any safety concerns — so you never mistake a harmful look-alike.',
   },
   {
-    icon: Globe,
-    title: 'Designed for Connectivity Constraints',
+    title: 'Built for Remote Use',
     description:
-      'Offline-capable architecture with background sync. Works in regions with intermittent connectivity where healthcare access is most limited.',
+      'Designed for regions where connectivity is unreliable and hospital access is hours away. The app works in low-bandwidth environments and provides guidance even offline.',
   },
 ]
 
@@ -34,16 +29,14 @@ export default function TechOverview() {
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
           <AnimatedBlock>
-            <span className="text-sm font-semibold uppercase tracking-wider text-primary-600">
-              Technology
-            </span>
-            <h2 className="mt-3 text-3xl font-bold text-text-primary sm:text-4xl">
+            <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
               Serious infrastructure for a serious problem
             </h2>
             <p className="mt-4 text-text-muted">
-              PhotoMed is not a simple plant identification app. It is a full-stack platform
-              combining artificial intelligence, geospatial data systems, and community-sourced
-              botanical knowledge into a single, accessible mobile experience.
+              PhotoMed is not a simple plant lookup tool. It is a full-stack platform that
+              combines artificial intelligence, geospatial data, and validated botanical
+              knowledge into a single mobile experience designed for the communities that need
+              it most.
             </p>
           </AnimatedBlock>
 
@@ -51,8 +44,10 @@ export default function TechOverview() {
             {techFeatures.map((feature, i) => (
               <AnimatedBlock key={feature.title} delay={i * 100}>
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-100 text-primary-700">
-                    <feature.icon size={20} />
+                  <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary-700">
+                    <svg className="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
                   </div>
                   <div>
                     <h3 className="text-sm font-bold text-text-primary">{feature.title}</h3>

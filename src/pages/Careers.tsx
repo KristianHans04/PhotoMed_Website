@@ -31,8 +31,7 @@ export default function Careers() {
           <AnimatedBlock>
             <div className="grid items-end gap-8 lg:grid-cols-2">
               <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-primary-600">Careers</p>
-                <h1 className="mt-4 text-4xl font-extrabold text-text-primary sm:text-5xl lg:text-6xl">
+                <h1 className="mt-2 text-4xl font-extrabold text-text-primary sm:text-5xl lg:text-6xl">
                   Join PhotoMed
                 </h1>
                 <p className="mt-4 max-w-lg text-lg text-text-muted">

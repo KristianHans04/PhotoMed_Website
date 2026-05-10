@@ -73,9 +73,6 @@ export default function CommunityImpact() {
           {/* Right: content */}
           <div className="lg:pt-8">
             <AnimatedBlock>
-              <span className="text-sm font-semibold uppercase tracking-wider text-primary-600">
-                Why This Matters
-              </span>
               <h2 className="mt-3 text-3xl font-bold text-text-primary sm:text-4xl">
                 For millions, the choice between
                 <span className="text-primary-700"> a plant-based remedy and nothing</span> is not a choice at all

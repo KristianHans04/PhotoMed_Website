@@ -60,9 +60,6 @@ export default function StickyScrollSection() {
         <div className="py-20 md:py-28">
           <AnimatedBlock>
             <div className="text-center">
-              <span className="text-sm font-semibold uppercase tracking-wider text-primary-600">
-                Product Journey
-              </span>
               <h2 className="mt-3 text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
                 From symptoms to remedy
               </h2>

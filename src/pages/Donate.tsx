@@ -59,8 +59,7 @@ export default function Donate() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedBlock>
             <div className="mx-auto max-w-2xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-wider text-primary-600">Support PhotoMed</p>
-              <h1 className="mt-4 text-4xl font-extrabold text-text-primary sm:text-5xl">
+              <h1 className="text-4xl font-extrabold text-text-primary sm:text-5xl">
                 Fund the mapping of vegetation and the delivery of symptom relief to underserved communities
               </h1>
             </div>
