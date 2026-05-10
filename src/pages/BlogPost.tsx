@@ -2,6 +2,15 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Section } from '@/components/ui/Section'
 
+interface ContentBlock {
+  type: 'paragraph' | 'heading' | 'quote' | 'statistic'
+  text?: string
+  attribution?: string
+  value?: string
+  label?: string
+  source?: string
+}
+
 interface BlogPost {
   slug: string
   title: string
@@ -10,8 +19,58 @@ interface BlogPost {
   date: string
   readingTime: string
   category: string
-  coverImage: string
-  content: string[]
+  content: (string | ContentBlock)[]
+}
+
+function isContentBlock(item: string | ContentBlock): item is ContentBlock {
+  return typeof item === 'object' && 'type' in item
+}
+
+function renderContentBlock(block: ContentBlock, index: number) {
+  switch (block.type) {
+    case 'heading':
+      return (
+        <h2 key={index} className="mt-10 mb-4 text-2xl font-bold text-text-primary">
+          {block.text}
+        </h2>
+      )
+    case 'quote':
+      return (
+        <blockquote
+          key={index}
+          className="my-8 border-l-4 border-primary-500 bg-primary-50/50 py-4 pl-6 pr-4"
+        >
+          <p className="text-base leading-relaxed text-text-secondary italic">
+            "{block.text}"
+          </p>
+          {block.attribution && (
+            <cite className="mt-3 block text-sm font-medium text-text-muted not-italic">
+              -- {block.attribution}
+            </cite>
+          )}
+        </blockquote>
+      )
+    case 'statistic':
+      return (
+        <div
+          key={index}
+          className="my-8 rounded-xl border border-primary-100 bg-surface-dim p-6 text-center"
+        >
+          <p className="text-4xl font-black text-primary-700">{block.value}</p>
+          <p className="mt-2 text-sm text-text-muted">{block.label}</p>
+          {block.source && (
+            <p className="mt-1 text-xs text-text-muted/70">Source: {block.source}</p>
+          )}
+        </div>
+      )
+    case 'paragraph':
+    default:
+      return (
+        <p key={index} className="leading-relaxed text-text-muted">
+          {block.text}
+        </p>
+      )
+  }
 }
 
 export default function BlogPostPage() {
@@ -29,7 +88,11 @@ export default function BlogPostPage() {
   const post = useMemo(() => posts.find((item) => item.slug === slug), [posts, slug])
 
   if (loading) {
-    return <Section><p className="text-center text-text-muted">Loading article...</p></Section>
+    return (
+      <Section>
+        <p className="text-center text-text-muted">Loading article...</p>
+      </Section>
+    )
   }
 
   if (!post) {
@@ -47,16 +110,27 @@ export default function BlogPostPage() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-primary-950 py-24 md:py-32">
-        <div className="absolute inset-0 opacity-20">
-          <img src={post.coverImage} alt="" className="h-full w-full object-cover" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/70 to-primary-950" />
-        <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-medium uppercase tracking-wider text-primary-400">{post.category}</p>
-          <h1 className="mt-4 text-4xl font-extrabold text-white sm:text-5xl">{post.title}</h1>
+      <section className="bg-primary-950 py-20 md:py-28">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <Link
+            to="/blog"
+            className="inline-flex items-center gap-2 text-sm text-primary-300 transition-colors hover:text-white"
+          >
+            Back to newsroom
+          </Link>
+          <p className="mt-6 text-xs font-medium uppercase tracking-wider text-primary-400">
+            {post.category}
+          </p>
+          <h1 className="mt-3 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
+            {post.title}
+          </h1>
           <p className="mt-5 text-sm text-primary-200/80">
-            {new Date(post.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} · {post.readingTime} · {post.author}
+            {new Date(post.date).toLocaleDateString('en-US', {
+              month: 'long',
+              day: 'numeric',
+              year: 'numeric',
+            })}{' '}
+            · {post.readingTime} · {post.author}
           </p>
         </div>
       </section>
@@ -64,15 +138,25 @@ export default function BlogPostPage() {
       <Section>
         <article className="mx-auto max-w-3xl">
           <p className="text-lg leading-relaxed text-text-secondary">{post.excerpt}</p>
-          <div className="mt-8 space-y-6">
-            {post.content.map((paragraph) => (
-              <p key={paragraph} className="leading-relaxed text-text-muted">
-                {paragraph}
-              </p>
-            ))}
+          <hr className="my-8 border-primary-100" />
+          <div className="space-y-6">
+            {post.content.map((item, index) => {
+              if (isContentBlock(item)) {
+                return renderContentBlock(item, index)
+              }
+              return (
+                <p key={index} className="leading-relaxed text-text-muted">
+                  {item}
+                </p>
+              )
+            })}
           </div>
-          <Link to="/blog" className="mt-10 inline-block text-sm font-semibold text-primary-700 hover:underline">
-            Back to blog
+          <hr className="my-10 border-primary-100" />
+          <Link
+            to="/blog"
+            className="inline-block text-sm font-semibold text-primary-700 hover:underline"
+          >
+            Back to newsroom
           </Link>
         </article>
       </Section>
