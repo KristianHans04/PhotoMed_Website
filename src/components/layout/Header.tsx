@@ -35,12 +35,12 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex">
-          <Link
-            to="/download"
+          <a
+            href="/api/apk-latest"
             className="rounded-lg bg-primary-700 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-primary-800 hover:shadow-lg hover:shadow-primary-700/25"
           >
             Get the App
-          </Link>
+          </a>
         </div>
 
         <button
@@ -70,13 +70,13 @@ export default function Header() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              to="/download"
+            <a
+              href="/api/apk-latest"
               onClick={() => setIsOpen(false)}
               className="mt-3 rounded-lg bg-primary-700 px-5 py-2.5 text-center text-sm font-semibold text-white"
             >
               Get the App
-            </Link>
+            </a>
           </nav>
         </div>
       )}

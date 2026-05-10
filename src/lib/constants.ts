@@ -19,13 +19,13 @@ export const NAV_LINKS = [
 
 export const FOOTER_LINKS = {
   product: [
-    { label: 'Download', href: '/download' },
     { label: 'Donate', href: '/donate' },
     { label: 'Research', href: '/research' },
   ],
   company: [
     { label: 'About', href: '/about' },
     { label: 'Blog', href: '/blog' },
+    { label: 'Careers', href: '/careers' },
     { label: 'Contact', href: '/contact' },
   ],
   legal: [
