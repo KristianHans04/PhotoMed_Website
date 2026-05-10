@@ -22,8 +22,8 @@ export default function Hero() {
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-100/90 sm:text-xl">
               PhotoMed uses AI to match your symptoms to medicinal plants near
               your location, shows you exactly where to find them, and tells you
-              how to prepare the remedy. A faster, free alternative when
-              hospitals are hours away.
+              how to prepare the remedy. Complementary to modern medicine,
+              built for the communities that need it most.
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">

@@ -54,15 +54,15 @@ export default function CTA() {
           <div className="lg:col-span-3">
             <AnimatedBlock delay={200}>
               <h2 className="text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
-                Hospitals should not be the only option.
+                This is bigger than one team.
                 <br />
-                <span className="text-primary-700">Help us build the alternative.</span>
+                <span className="text-primary-700">Help us bring it to more communities.</span>
               </h2>
               <p className="mt-6 text-lg text-text-muted leading-relaxed">
                 Every contribution funds the mapping of more vegetation, the expansion of
-                our AI models, and the delivery of this tool into underserved communities
-                where the nearest clinic is hours away but the nearest remedy is growing
-                in someone's backyard.
+                our AI capabilities, and the delivery of PhotoMed into communities where
+                proven plant-based remedies are growing but the knowledge of how to use
+                them safely has not yet reached the people who need it.
               </p>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
