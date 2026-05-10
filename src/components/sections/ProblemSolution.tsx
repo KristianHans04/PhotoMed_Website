@@ -1,4 +1,36 @@
+import { useState } from 'react'
 import { Section, AnimatedBlock } from '@/components/ui/Section'
+
+const steps = [
+  {
+    step: '01',
+    title: 'Describe your symptoms',
+    description:
+      'Open the AI chatbot and describe what you are feeling in plain language. The app may ask follow-up questions or request a photo for better accuracy.',
+    image: '/images/app-screen-chat.webp',
+  },
+  {
+    step: '02',
+    title: 'Get matched to a plant-based remedy',
+    description:
+      'The AI identifies which medicinal plants can treat your symptoms and provides the exact preparation method — chew, boil, brew, or apply directly.',
+    image: '/images/app-screen-plantid.webp',
+  },
+  {
+    step: '03',
+    title: 'Navigate to the nearest plant',
+    description:
+      'PhotoMed cross-references your GPS location against its vegetation database and gives you walking directions to the closest available plant.',
+    image: '/images/app-screen-map.webp',
+  },
+  {
+    step: '04',
+    title: 'Confirm the right species',
+    description:
+      'Point your camera at the plant when you arrive. The AI verifies the species match and flags any safety concerns before you pick anything.',
+    image: '/images/community-2.webp',
+  },
+]
 
 const useCases = [
   {
@@ -40,6 +72,8 @@ const useCases = [
 ]
 
 export default function ProblemSolution() {
+  const [activeStep, setActiveStep] = useState(0)
+
   return (
     <>
       {/* Problem statement */}
@@ -91,6 +125,102 @@ export default function ProblemSolution() {
               </div>
             </AnimatedBlock>
           </div>
+        </div>
+      </section>
+
+      {/* How it works — interactive step cards with phone preview */}
+      <section className="relative overflow-hidden bg-surface-dim py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedBlock>
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
+                From symptoms to remedy in minutes
+              </h2>
+              <p className="mt-4 text-text-muted">
+                PhotoMed connects your symptoms to verified, nearby, plant-based remedies
+                and guides you through every step.
+              </p>
+            </div>
+          </AnimatedBlock>
+
+          <AnimatedBlock delay={200}>
+            <div className="mt-16 grid items-start gap-10 lg:grid-cols-5">
+              <div className="lg:col-span-3">
+                <div className="grid gap-4 sm:grid-cols-2">
+                  {steps.map((item, i) => (
+                    <button
+                      key={item.step}
+                      onClick={() => setActiveStep(i)}
+                      className={`group relative overflow-hidden rounded-2xl p-6 text-left transition-all duration-300 ${
+                        i === activeStep
+                          ? 'bg-primary-700 text-white shadow-lg shadow-primary-700/20'
+                          : 'bg-white text-text-primary hover:shadow-md'
+                      }`}
+                    >
+                      <span
+                        className={`text-4xl font-black ${
+                          i === activeStep ? 'text-white/20' : 'text-primary-100'
+                        }`}
+                      >
+                        {item.step}
+                      </span>
+                      <h3
+                        className={`mt-3 text-base font-bold ${
+                          i === activeStep ? 'text-white' : 'text-text-primary'
+                        }`}
+                      >
+                        {item.title}
+                      </h3>
+                      <p
+                        className={`mt-2 text-sm leading-relaxed ${
+                          i === activeStep ? 'text-white/80' : 'text-text-muted'
+                        }`}
+                      >
+                        {item.description}
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex justify-center lg:col-span-2 lg:sticky lg:top-28">
+                <div className="w-[220px] sm:w-[240px]">
+                  <div className="overflow-hidden rounded-[2rem] border border-gray-200 bg-white shadow-xl transition-all duration-500">
+                    <img
+                      src={steps[activeStep].image}
+                      alt={`Step ${steps[activeStep].step}: ${steps[activeStep].title}`}
+                      className="aspect-[9/16] w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimatedBlock>
+
+          <AnimatedBlock delay={400}>
+            <div className="mx-auto mt-14 max-w-3xl rounded-2xl border border-primary-200 bg-white p-6 sm:p-8">
+              <div className="flex gap-4">
+                <div className="shrink-0">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
+                    <svg className="h-5 w-5 text-primary-700" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                    </svg>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-base font-bold text-text-primary">
+                    If symptoms persist, consult a healthcare professional
+                  </h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-text-muted">
+                    PhotoMed addresses everyday symptoms — headaches, stomach aches, minor burns,
+                    coughs, nausea. It is complementary to modern healthcare, not a replacement.
+                    If your condition does not improve, always seek professional medical advice.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </AnimatedBlock>
         </div>
       </section>
 
