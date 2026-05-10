@@ -35,14 +35,14 @@ export default function InteractiveDemo() {
   const current = slides[active]
 
   return (
-    <section className="bg-white py-20 md:py-28">
+    <section className="bg-primary-950 py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimatedBlock>
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
               How PhotoMed works
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-text-muted">
+            <p className="mx-auto mt-4 max-w-2xl text-primary-300/80">
               From symptom to remedy in three steps. No appointment, no prescription, no waiting room.
             </p>
           </div>
@@ -58,15 +58,15 @@ export default function InteractiveDemo() {
                     onClick={() => setActive(i)}
                     className={`w-full rounded-xl border px-5 py-4 text-left transition-all ${
                       i === active
-                        ? 'border-primary-300 bg-primary-50 text-text-primary shadow-sm'
-                        : 'border-gray-200 bg-white text-text-muted hover:border-primary-200 hover:bg-primary-50/50'
+                        ? 'border-primary-500 bg-primary-800/60 text-white shadow-sm'
+                        : 'border-primary-800 bg-primary-900/40 text-primary-300 hover:border-primary-600 hover:bg-primary-800/30'
                     }`}
                   >
                     <p className="font-semibold">
-                      <span className="mr-2 text-primary-600">{String(i + 1).padStart(2, '0')}</span>
-                      {slide.name}
+                      <span className="mr-2 text-primary-400">{String(i + 1).padStart(2, '0')}</span>
+                      <span className={i === active ? 'text-white' : 'text-primary-200'}>{slide.name}</span>
                     </p>
-                    <p className="mt-1 text-sm opacity-80">{slide.summary}</p>
+                    <p className={`mt-1 text-sm ${i === active ? 'text-primary-200' : 'text-primary-400'}`}>{slide.summary}</p>
                   </button>
                 ))}
               </div>
@@ -78,7 +78,7 @@ export default function InteractiveDemo() {
                     onClick={() => setActive(i)}
                     aria-label={`Show ${slide.name}`}
                     className={`h-1.5 rounded-full transition-all ${
-                      i === active ? 'w-8 bg-primary-600' : 'w-2 bg-gray-300'
+                      i === active ? 'w-8 bg-primary-400' : 'w-2 bg-primary-700'
                     }`}
                   />
                 ))}
@@ -87,7 +87,7 @@ export default function InteractiveDemo() {
 
             <div className="order-1 flex justify-center lg:order-2">
               <div className="relative w-[220px] sm:w-[260px]">
-                <div className="overflow-hidden rounded-[2rem] border border-gray-200 bg-white shadow-xl">
+                <div className="overflow-hidden rounded-[2rem] border border-primary-700/50 bg-primary-900 shadow-xl shadow-black/40">
                   <img
                     src={current.image}
                     alt={`${current.name} — PhotoMed app`}
@@ -96,10 +96,10 @@ export default function InteractiveDemo() {
                   />
                 </div>
                 <div className="mt-4 text-center">
-                  <h3 className="text-lg font-bold text-text-primary">{current.name}</h3>
+                  <h3 className="text-lg font-bold text-white">{current.name}</h3>
                   <ul className="mt-2 space-y-1">
                     {current.outcomes.map((outcome) => (
-                      <li key={outcome} className="text-sm text-text-muted">
+                      <li key={outcome} className="text-sm text-primary-300">
                         {outcome}
                       </li>
                     ))}

@@ -230,7 +230,7 @@ export default function ProblemSolution() {
       </section>
 
       {/* Use cases — image-backed cards with hover effect */}
-      <Section className="bg-white">
+      <Section className="bg-primary-50">
         <AnimatedBlock>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
