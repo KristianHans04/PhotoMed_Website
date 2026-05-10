@@ -1,36 +1,4 @@
-import { useState } from 'react'
 import { Section, AnimatedBlock } from '@/components/ui/Section'
-
-const steps = [
-  {
-    step: '01',
-    title: 'Describe your symptoms',
-    description:
-      'Open the AI chatbot and describe what you are feeling in plain language. The app may ask follow-up questions or request a photo for better accuracy.',
-    image: '/images/app-screen-chat.webp',
-  },
-  {
-    step: '02',
-    title: 'Receive a plant-based remedy',
-    description:
-      'The AI matches your symptoms to medicinal plants backed by ethnobotanical research and provides the specific preparation method — chew, boil, brew, or apply.',
-    image: '/images/app-screen-plantid.webp',
-  },
-  {
-    step: '03',
-    title: 'Navigate to the nearest plant',
-    description:
-      'PhotoMed cross-references your GPS location against our vegetation database and gives you walking directions to the closest available plant.',
-    image: '/images/app-screen-map.webp',
-  },
-  {
-    step: '04',
-    title: 'Confirm the right species',
-    description:
-      'Point your camera at the plant when you arrive. The AI verifies the species match and flags any safety concerns before you pick anything.',
-    image: '/images/community-2.webp',
-  },
-]
 
 const useCases = [
   {
@@ -72,8 +40,6 @@ const useCases = [
 ]
 
 export default function ProblemSolution() {
-  const [activeStep, setActiveStep] = useState(0)
-
   return (
     <>
       {/* Problem statement */}
@@ -93,9 +59,7 @@ export default function ProblemSolution() {
             <AnimatedBlock>
               <div>
                 <h2 className="text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
-                  The hospital is 6 hours away.
-                  <br />
-                  <span className="text-primary-700">The remedy is 6 minutes away.</span>
+                  Healthcare access should not determine whether a headache becomes a crisis.
                 </h2>
                 <p className="mt-6 text-text-muted leading-relaxed">
                   Across sub-Saharan Africa, the doctor-to-patient ratio reaches 1 doctor
@@ -108,7 +72,7 @@ export default function ProblemSolution() {
                   Meanwhile, the plants that have treated headaches, stomach aches, coughs,
                   burns, and fevers for generations are still growing in the fields, gardens,
                   and roadsides around these communities. The knowledge of how to use them
-                  just needs to reach the people who need it.
+                  safely just needs to reach the people who need it.
                 </p>
                 <div className="mt-8 grid grid-cols-2 gap-4">
                   <div className="border-l-4 border-primary-500 pl-4">
@@ -130,115 +94,16 @@ export default function ProblemSolution() {
         </div>
       </section>
 
-      {/* How it works — interactive tabbed layout with phone preview */}
-      <section className="relative overflow-hidden bg-surface-dim py-20 md:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedBlock>
-            <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
-                From symptoms to remedy in minutes
-              </h2>
-              <p className="mt-4 text-text-muted">
-                PhotoMed connects your symptoms to verified, nearby, plant-based remedies
-                and guides you through every step.
-              </p>
-            </div>
-          </AnimatedBlock>
-
-          <AnimatedBlock delay={200}>
-            <div className="mt-16 grid items-start gap-10 lg:grid-cols-5">
-              {/* Left: Steps navigation */}
-              <div className="lg:col-span-3">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {steps.map((item, i) => (
-                    <button
-                      key={item.step}
-                      onClick={() => setActiveStep(i)}
-                      className={`group relative overflow-hidden rounded-2xl p-6 text-left transition-all duration-300 ${
-                        i === activeStep
-                          ? 'bg-primary-700 text-white shadow-lg shadow-primary-700/20'
-                          : 'bg-white text-text-primary hover:shadow-md'
-                      }`}
-                    >
-                      <span
-                        className={`text-4xl font-black ${
-                          i === activeStep ? 'text-white/20' : 'text-primary-100'
-                        }`}
-                      >
-                        {item.step}
-                      </span>
-                      <h3
-                        className={`mt-3 text-base font-bold ${
-                          i === activeStep ? 'text-white' : 'text-text-primary'
-                        }`}
-                      >
-                        {item.title}
-                      </h3>
-                      <p
-                        className={`mt-2 text-sm leading-relaxed ${
-                          i === activeStep ? 'text-white/80' : 'text-text-muted'
-                        }`}
-                      >
-                        {item.description}
-                      </p>
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right: Phone preview */}
-              <div className="flex justify-center lg:col-span-2 lg:sticky lg:top-28">
-                <div className="w-[220px] sm:w-[240px]">
-                  <div className="overflow-hidden rounded-[2rem] border border-gray-200 bg-white shadow-xl transition-all duration-500">
-                    <img
-                      src={steps[activeStep].image}
-                      alt={`Step ${steps[activeStep].step}: ${steps[activeStep].title}`}
-                      className="aspect-[9/16] w-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </AnimatedBlock>
-
-          {/* Safety note */}
-          <AnimatedBlock delay={400}>
-            <div className="mx-auto mt-14 max-w-3xl rounded-2xl border border-primary-200 bg-white p-6 sm:p-8">
-              <div className="flex gap-4">
-                <div className="shrink-0">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100">
-                    <svg className="h-5 w-5 text-primary-700" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                    </svg>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-base font-bold text-text-primary">
-                    If symptoms persist, consult a healthcare professional
-                  </h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-text-muted">
-                    PhotoMed addresses everyday symptoms — headaches, stomach aches, minor burns,
-                    coughs, nausea. It is complementary to modern healthcare, not a replacement.
-                    If your condition does not improve, always seek professional medical advice.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </AnimatedBlock>
-        </div>
-      </section>
-
-      {/* Use cases — image-backed cards with hover effect */}
+      {/* Use cases */}
       <Section className="bg-primary-50">
         <AnimatedBlock>
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
-              Real symptoms. Proven remedies.
+              Real symptoms. Documented remedies.
             </h2>
             <p className="mt-4 text-text-muted">
-              These are not hypothetical. These are plant-based preparations with documented
-              use across cultures and published research supporting their efficacy.
+              These are plant-based preparations with published ethnobotanical evidence
+              behind them, used across cultures for generations.
             </p>
           </div>
         </AnimatedBlock>
