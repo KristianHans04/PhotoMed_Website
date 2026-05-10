@@ -7,10 +7,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div id="demo">
-        <InteractiveDemo />
-      </div>
       <ProblemSolution />
+      <InteractiveDemo />
       <CTA />
     </>
   )

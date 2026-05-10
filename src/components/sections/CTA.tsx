@@ -68,9 +68,12 @@ export default function CTA() {
                 <Button href="/donate" size="lg">
                   Support the Mission
                 </Button>
-                <Button href="/download" variant="secondary" size="lg">
+                <a
+                  href="/api/apk-latest"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary-50 px-8 py-4 text-base font-semibold text-primary-700 transition-all hover:bg-primary-100"
+                >
                   Download PhotoMed
-                </Button>
+                </a>
               </div>
             </AnimatedBlock>
           </div>

@@ -1,10 +1,8 @@
 import { Section, AnimatedBlock } from '@/components/ui/Section'
-import PhoneFrame from '@/components/ui/PhoneFrame'
 
 export default function ProblemSolution() {
   return (
     <>
-      {/* Problem statement - full width image + text overlay */}
       <section className="relative overflow-hidden bg-white">
         <div className="grid lg:grid-cols-2">
           <div className="relative aspect-[4/3] lg:aspect-auto">
@@ -20,10 +18,7 @@ export default function ProblemSolution() {
           <div className="flex items-center px-6 py-16 sm:px-12 lg:py-24 lg:pl-16 lg:pr-20">
             <AnimatedBlock>
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wider text-primary-600">
-                  The Reality
-                </span>
-                <h2 className="mt-3 text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
+                <h2 className="text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
                   Healthcare is a privilege.
                   <br />
                   <span className="text-primary-700">Plant knowledge should not be.</span>
@@ -52,14 +47,10 @@ export default function ProblemSolution() {
         </div>
       </section>
 
-      {/* Three core capabilities - different card layout */}
       <Section className="bg-surface-dim">
         <AnimatedBlock>
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm font-semibold uppercase tracking-wider text-primary-600">
-              What PhotoMed Does
-            </span>
-            <h2 className="mt-3 text-3xl font-bold text-text-primary sm:text-4xl">
+            <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
               Three capabilities. One mission.
             </h2>
           </div>
@@ -89,7 +80,14 @@ export default function ProblemSolution() {
             <AnimatedBlock key={feature.title} delay={i * 150}>
               <div className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-lg">
                 <div className="flex justify-center bg-gradient-to-b from-primary-50 to-white px-6 pt-8 pb-4">
-                  <PhoneFrame src={feature.image} alt={feature.title} size="sm" />
+                  <div className="w-[160px] overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md">
+                    <img
+                      src={feature.image}
+                      alt={feature.title}
+                      className="aspect-[9/16] w-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-1 flex-col p-6 pt-4">
                   <h3 className="text-lg font-bold text-text-primary">{feature.title}</h3>

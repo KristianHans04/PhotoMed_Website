@@ -1,45 +1,55 @@
-import Button from '@/components/ui/Button'
-import PhoneFrame from '@/components/ui/PhoneFrame'
-
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-28">
-      <div className="pointer-events-none absolute -left-24 top-6 h-72 w-72 rounded-full bg-primary-100/50 blur-3xl" />
-      <div className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-primary-100/40 blur-3xl" />
+    <section className="relative min-h-[90vh] overflow-hidden">
+      <div className="absolute inset-0">
+        <img
+          src="/images/community-1.webp"
+          alt="Communities preserving traditional medicinal plant knowledge"
+          className="h-full w-full object-cover"
+          loading="eager"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-950/90 via-primary-950/75 to-primary-950/40" />
+      </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          <div className="text-center lg:text-left">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-700">
-              PhotoMed
-            </span>
-            <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-text-primary sm:text-5xl lg:text-6xl">
-              Traditional plant knowledge,
+      <div className="relative flex min-h-[90vh] items-center">
+        <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+              Centuries of healing knowledge.
               <br />
-              in one modern experience.
+              <span className="text-primary-300">One modern platform.</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-text-muted lg:mx-0">
-              Identify medicinal plants, explore practical guidance, and navigate discovery with confidence.
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-100/90 sm:text-xl">
+              PhotoMed preserves traditional plant medicine through AI-powered
+              identification, symptom guidance, and geospatial discovery — built for
+              the communities that depend on it most.
             </p>
 
-            <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row lg:justify-start">
-              <Button href="/download" size="lg">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="/api/apk-latest"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-white px-8 py-4 text-base font-semibold text-primary-900 transition-all hover:bg-primary-50 hover:shadow-lg"
+              >
                 Get the App
-              </Button>
-              <Button href="/blog" variant="outline" size="lg">
-                Read the Blog
-              </Button>
+              </a>
+              <a
+                href="/donate"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border-2 border-white/30 px-8 py-4 text-base font-semibold text-white transition-all hover:border-white/60 hover:bg-white/10"
+              >
+                Support the Mission
+              </a>
             </div>
-          </div>
 
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[460px] rounded-3xl border border-primary-100 bg-surface-dim p-4 shadow-sm">
-              <img
-                src="/images/community-1.webp"
-                alt="Community members preserving medicinal plant knowledge"
-                className="aspect-[4/3] w-full rounded-2xl object-cover"
-                loading="eager"
-              />
+            <div className="mt-14 flex items-center gap-8 text-sm text-primary-200/70">
+              <div>
+                <span className="block text-2xl font-bold text-white">80%</span>
+                of Africa relies on traditional medicine
+              </div>
+              <div className="h-10 w-px bg-primary-400/30" />
+              <div>
+                <span className="block text-2xl font-bold text-white">5,000+</span>
+                documented medicinal plant species
+              </div>
             </div>
           </div>
         </div>

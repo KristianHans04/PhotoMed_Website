@@ -62,10 +62,7 @@ export default function Donate() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedBlock>
             <div className="mx-auto max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wider text-primary-400">
-                Donate
-              </span>
-              <h1 className="mt-4 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+              <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
                 Support PhotoMed
               </h1>
               <p className="mt-6 text-lg text-primary-200/80">

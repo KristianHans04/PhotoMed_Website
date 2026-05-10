@@ -16,10 +16,7 @@ export default function About() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedBlock>
             <div className="mx-auto max-w-3xl text-center">
-              <span className="text-sm font-semibold uppercase tracking-wider text-primary-400">
-                About PhotoMed
-              </span>
-              <h1 className="mt-4 text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
+              <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
                 We are building the world's first
                 <span className="text-primary-300"> trusted digital platform</span> for traditional plant medicine
               </h1>
@@ -47,10 +44,7 @@ export default function About() {
           <div className="flex items-center bg-white p-8 md:p-12 lg:p-16">
             <AnimatedBlock>
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wider text-primary-700">
-                  The Problem
-                </span>
-                <h2 className="mt-3 text-3xl font-bold text-text-primary sm:text-4xl">
+                <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
                   Ancient knowledge is disappearing
                 </h2>
                 <div className="mt-6 space-y-4 text-text-muted leading-relaxed">
@@ -83,10 +77,7 @@ export default function About() {
           <div className="order-2 flex items-center bg-primary-50 p-8 md:p-12 lg:order-1 lg:p-16">
             <AnimatedBlock>
               <div>
-                <span className="text-sm font-semibold uppercase tracking-wider text-primary-700">
-                  Our Solution
-                </span>
-                <h2 className="mt-3 text-3xl font-bold text-text-primary sm:text-4xl">
+                <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
                   Technology as a preservation tool
                 </h2>
                 <div className="mt-6 space-y-4 text-text-muted leading-relaxed">
@@ -127,10 +118,7 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedBlock>
             <div className="text-center">
-              <span className="text-sm font-semibold uppercase tracking-wider text-primary-400">
-                Our Roadmap
-              </span>
-              <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">The Path Forward</h2>
+              <h2 className="text-3xl font-bold text-white sm:text-4xl">The Path Forward</h2>
             </div>
           </AnimatedBlock>
 
