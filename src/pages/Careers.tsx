@@ -25,21 +25,32 @@ export default function Careers() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-primary-950 py-24 md:py-32">
-        <div className="absolute inset-0 opacity-15">
-          <img src="/images/community-2.webp" alt="" className="h-full w-full object-cover" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/70 to-primary-950" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Careers hero — accent strip left-aligned */}
+      <section className="border-b border-primary-100 bg-white py-16 md:py-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedBlock>
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-                Join PhotoMed
-              </h1>
-              <p className="mt-6 text-lg text-primary-200/80">
-                We are a small team with a large mission. If you want real startup experience
-                at the intersection of AI, healthcare, and social impact, we want to hear from you.
-              </p>
+            <div className="grid items-end gap-8 lg:grid-cols-2">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wider text-primary-600">Careers</p>
+                <h1 className="mt-4 text-4xl font-extrabold text-text-primary sm:text-5xl lg:text-6xl">
+                  Join PhotoMed
+                </h1>
+                <p className="mt-4 max-w-lg text-lg text-text-muted">
+                  We are a small team with a large mission. If you want real startup
+                  experience at the intersection of AI, healthcare, and social impact,
+                  we want to hear from you.
+                </p>
+              </div>
+              <div className="hidden lg:block">
+                <div className="overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/community-2.webp"
+                    alt="Team collaboration"
+                    className="aspect-[16/9] w-full object-cover"
+                    loading="eager"
+                  />
+                </div>
+              </div>
             </div>
           </AnimatedBlock>
         </div>

@@ -3,29 +3,36 @@ import { AnimatedBlock } from '@/components/ui/Section'
 export default function About() {
   return (
     <>
-      {/* Full-bleed hero with dark overlay */}
-      <section className="relative overflow-hidden bg-primary-950 py-28 md:py-36">
-        <div className="absolute inset-0 opacity-20">
-          <img
-            src="/images/vegetation-dense.webp"
-            alt=""
-            className="h-full w-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/70 via-primary-950/80 to-primary-950" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedBlock>
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-                We are mapping the world's vegetation
-                <span className="text-primary-300"> so no one has to suffer waiting for medicine that's already growing around them</span>
-              </h1>
-              <p className="mt-6 text-lg text-primary-200/80 leading-relaxed">
-                PhotoMed is an AI-powered mobile tool that treats everyday symptoms using
-                medicinal plants found near you. Think of it as a GPS for natural remedies.
-              </p>
-            </div>
-          </AnimatedBlock>
+      {/* About hero — asymmetric split with large text */}
+      <section className="overflow-hidden bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+            <AnimatedBlock>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-wider text-primary-600">About PhotoMed</p>
+                <h1 className="mt-4 text-4xl font-extrabold text-text-primary sm:text-5xl lg:text-6xl">
+                  We are mapping the world's vegetation so no one has to suffer waiting for
+                  medicine that is already growing around them
+                </h1>
+              </div>
+            </AnimatedBlock>
+            <AnimatedBlock delay={200}>
+              <div className="relative">
+                <div className="overflow-hidden rounded-3xl">
+                  <img
+                    src="/images/vegetation-dense.webp"
+                    alt="Dense medicinal vegetation"
+                    className="aspect-[4/5] w-full object-cover"
+                    loading="eager"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -left-6 rounded-2xl bg-primary-700 px-6 py-4 shadow-lg">
+                  <p className="text-2xl font-black text-white">50,000+</p>
+                  <p className="text-xs text-primary-200">documented medicinal plant species</p>
+                </div>
+              </div>
+            </AnimatedBlock>
+          </div>
         </div>
       </section>
 

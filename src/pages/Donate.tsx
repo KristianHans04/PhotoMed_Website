@@ -54,21 +54,15 @@ export default function Donate() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-primary-950 py-24 md:py-32">
-        <div className="absolute inset-0 opacity-20">
-          <img src="/images/community-1.webp" alt="" className="h-full w-full object-cover" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-primary-950/80 to-primary-950/60" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Donate hero — clean, minimal, no dark overlay */}
+      <section className="border-b border-primary-100 bg-gradient-to-b from-primary-50 to-white py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedBlock>
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-                Support PhotoMed
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary-600">Support PhotoMed</p>
+              <h1 className="mt-4 text-4xl font-extrabold text-text-primary sm:text-5xl">
+                Fund the mapping of vegetation and the delivery of symptom relief to underserved communities
               </h1>
-              <p className="mt-6 text-lg text-primary-200/80">
-                Your contribution funds vegetation mapping, AI development, and
-                bringing this tool to communities where the nearest clinic is hours away.
-              </p>
             </div>
           </AnimatedBlock>
         </div>

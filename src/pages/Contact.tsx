@@ -33,19 +33,18 @@ export default function Contact() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-primary-950 py-24 md:py-32">
-        <div className="absolute inset-0 opacity-15">
-          <img src="/images/vegetation-hands.webp" alt="" className="h-full w-full object-cover" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/60 to-primary-950" />
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Contact hero — simple inline header, no image */}
+      <section className="bg-white py-16 md:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedBlock>
-            <div className="mx-auto max-w-3xl text-center">
-              <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl">
-                Send us a message
+            <div className="max-w-xl">
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary-600">Contact</p>
+              <h1 className="mt-4 text-4xl font-extrabold text-text-primary sm:text-5xl">
+                Get in touch
               </h1>
-              <p className="mt-6 text-lg text-primary-200/80">
-                We are available for partnerships, funding conversations, and general inquiries.
+              <p className="mt-4 text-lg text-text-muted">
+                We are available for partnerships, investment conversations, research
+                collaborations, and general inquiries.
               </p>
             </div>
           </AnimatedBlock>
