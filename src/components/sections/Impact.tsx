@@ -18,9 +18,7 @@ export default function Impact() {
           <AnimatedBlock>
             <div className="text-center">
               <h2 className="text-3xl font-bold text-white sm:text-4xl">
-                The healthcare gap is massive.
-                <br />
-                <span className="text-primary-300">The remedy is literally growing around us.</span>
+                The need this addresses, at scale.
               </h2>
             </div>
           </AnimatedBlock>

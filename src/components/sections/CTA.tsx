@@ -54,9 +54,7 @@ export default function CTA() {
           <div className="lg:col-span-3">
             <AnimatedBlock delay={200}>
               <h2 className="text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
-                This is bigger than one team.
-                <br />
-                <span className="text-primary-700">Help us bring it to more communities.</span>
+                There is significant work ahead. Funding, partnerships, and community are what makes it possible.
               </h2>
               <p className="mt-6 text-lg text-text-muted leading-relaxed">
                 Every contribution funds the mapping of more vegetation, the expansion of
