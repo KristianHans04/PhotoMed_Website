@@ -1,170 +1,178 @@
 import { AnimatedBlock } from '@/components/ui/Section'
 
+const principles = [
+  {
+    title: 'Accessibility over everything',
+    body: 'If a solution only works for people who already have access to a hospital, it is not solving the right problem. Everything we build is designed around the communities where the need is greatest — not the ones where distribution is easiest.',
+  },
+  {
+    title: 'Evidence, not folklore',
+    body: 'We have deep respect for traditional botanical knowledge. We also hold it to a standard. Every remedy we surface is cross-referenced against published ethnobotanical research. The goal is not to preserve tradition — it is to make what works safe and findable.',
+  },
+  {
+    title: 'Complementary, not competitive',
+    body: 'PhotoMed is not trying to replace doctors, clinics, or pharmaceutical companies. It addresses the symptoms that do not require a prescription and, in doing so, reduces the pressure on systems that are already stretched beyond capacity.',
+  },
+  {
+    title: 'Safety is not optional',
+    body: 'Many medicinal plants have harmful look-alikes. Many have dosage limits. Many interact badly with other medications. We built the camera verification step and the safety flagging system precisely because we know the consequences of getting it wrong.',
+  },
+]
+
 export default function About() {
   return (
     <>
-      {/* About hero — asymmetric split with large text */}
-      <section className="overflow-hidden bg-white">
-        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-            <AnimatedBlock>
-              <div>
-                <p className="text-sm font-semibold uppercase tracking-wider text-primary-600">About PhotoMed</p>
-                <h1 className="mt-4 text-4xl font-extrabold text-text-primary sm:text-5xl lg:text-6xl">
-                  We are mapping the world's vegetation so no one has to suffer waiting for
-                  medicine that is already growing around them
-                </h1>
-              </div>
-            </AnimatedBlock>
-            <AnimatedBlock delay={200}>
-              <div className="relative">
-                <div className="overflow-hidden rounded-3xl">
-                  <img
-                    src="/images/vegetation-dense.webp"
-                    alt="Dense medicinal vegetation"
-                    className="aspect-[4/5] w-full object-cover"
-                    loading="eager"
-                  />
-                </div>
-                <div className="absolute -bottom-6 -left-6 rounded-2xl bg-primary-700 px-6 py-4 shadow-lg">
-                  <p className="text-2xl font-black text-white">50,000+</p>
-                  <p className="text-xs text-primary-200">documented medicinal plant species</p>
-                </div>
-              </div>
-            </AnimatedBlock>
-          </div>
-        </div>
-      </section>
-
-      {/* The Problem - full width image + text layout */}
-      <section className="overflow-hidden">
-        <div className="grid lg:grid-cols-2">
-          <div className="relative">
-            <img
-              src="/images/community-3.webp"
-              alt="People waiting outside a rural health clinic"
-              className="h-full min-h-[300px] w-full object-cover lg:min-h-[500px]"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/10 lg:bg-none" />
-          </div>
-          <div className="flex items-center bg-white p-8 md:p-12 lg:p-16">
-            <AnimatedBlock>
-              <div>
-                <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
-                  The healthcare system was not built for everyone
-                </h2>
-                <div className="mt-6 space-y-4 text-text-muted leading-relaxed">
-                  <p>
-                    In sub-Saharan Africa, the doctor-to-patient ratio is 1 to 5,000. Patients
-                    wait 12 or more hours to be seen. When they get in, basic medicines are often
-                    out of stock. The WHO estimates that 57% of Africans lack reliable access to
-                    essential medicines.
-                  </p>
-                  <p>
-                    But here is what most people do not realize: the plants that have treated headaches,
-                    stomach aches, burns, coughs, and fevers for generations are still growing in
-                    the gardens, fields, and roadsides around these communities. The remedies exist.
-                    People just need help finding and using them safely.
-                  </p>
-                  <p>
-                    That is exactly what PhotoMed does.
-                  </p>
-                </div>
-              </div>
-            </AnimatedBlock>
-          </div>
-        </div>
-      </section>
-
-      {/* The Solution - reversed layout */}
-      <section className="overflow-hidden">
-        <div className="grid lg:grid-cols-2">
-          <div className="order-2 flex items-center bg-primary-50 p-8 md:p-12 lg:order-1 lg:p-16">
-            <AnimatedBlock>
-              <div>
-                <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
-                  Your symptoms. The nearest plant. How to prepare it.
-                </h2>
-                <div className="mt-6 space-y-4 text-text-muted leading-relaxed">
-                  <p>
-                    Tell our AI chatbot what you are feeling. "I have a headache and feel nauseous."
-                    It identifies which medicinal plants can help, finds the closest one to your GPS
-                    location, gives you walking directions, and tells you how to prepare the remedy —
-                    whether that means chewing the leaf, boiling it into tea, or applying it directly.
-                  </p>
-                  <p>
-                    When you arrive at the plant, point your camera at it. The AI confirms you have
-                    the right species and warns you if anything looks wrong. No guessing, no risk of
-                    picking a harmful look-alike.
-                  </p>
-                  <p>
-                    PhotoMed is not replacing doctors or pharmaceutical companies. We are decongesting
-                    hospitals by handling the everyday symptoms — headaches, colds, minor burns,
-                    stomach aches — that do not require a prescription. If symptoms persist or are
-                    serious, we always recommend professional medical care.
-                  </p>
-                </div>
-              </div>
-            </AnimatedBlock>
-          </div>
-          <div className="relative order-1 lg:order-2">
-            <img
-              src="/images/community-2.webp"
-              alt="Person using smartphone near vegetation"
-              className="h-full min-h-[300px] w-full object-cover lg:min-h-[500px]"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Vision - 3-step roadmap */}
-      <section className="bg-primary-900 py-20 md:py-28">
+      {/* Page intro — clean, left-aligned, no hero image */}
+      <section className="border-b border-gray-100 bg-white py-16 md:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedBlock>
-            <div className="text-center">
-              <h2 className="text-3xl font-bold text-white sm:text-4xl">The Path Forward</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-primary-200/70">
-                We are building the infrastructure for plant-based symptom relief at scale.
+            <div className="max-w-3xl">
+              <h1 className="text-4xl font-extrabold text-text-primary sm:text-5xl">
+                About PhotoMed
+              </h1>
+              <p className="mt-6 text-xl leading-relaxed text-text-muted">
+                PhotoMed is built on a straightforward observation: the remedies that have
+                treated everyday symptoms for generations are still growing in fields, gardens,
+                and roadsides across Africa. What is missing is not the plants — it is the
+                ability to find them, identify them safely, and know how to use them.
+              </p>
+            </div>
+          </AnimatedBlock>
+        </div>
+      </section>
+
+      {/* Origin story */}
+      <section className="bg-primary-50 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-start gap-16 lg:grid-cols-2">
+            <AnimatedBlock>
+              <div>
+                <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
+                  Where this started
+                </h2>
+                <div className="mt-6 space-y-5 text-text-muted leading-relaxed">
+                  <p>
+                    The project began with a simple question: what happens when you are feeling
+                    unwell, the nearest clinic is hours away, and basic medications are either
+                    unavailable or unaffordable?
+                  </p>
+                  <p>
+                    In most of sub-Saharan Africa, that is not a hypothetical. It is a Tuesday.
+                    The WHO estimates that 57% of Africans cannot reliably access essential
+                    medicines. Doctor-to-patient ratios in the region reach 1 to 5,000.
+                    People routinely wait 12 hours or more to be seen at public hospitals —
+                    for headaches, stomach aches, coughs, and burns that, in another context,
+                    would be handled at home.
+                  </p>
+                  <p>
+                    The gap PhotoMed is trying to close is not between the sick and doctors.
+                    It is between the sick and the knowledge of what to do before the doctor
+                    is reachable. Traditional communities had that knowledge. It is documented.
+                    It is real. The challenge is making it accurate, safe, and accessible to
+                    the person standing in a field with a headache who does not know which
+                    plant to pick or how to prepare it.
+                  </p>
+                </div>
+              </div>
+            </AnimatedBlock>
+
+            <AnimatedBlock delay={200}>
+              <div className="space-y-6">
+                <div className="overflow-hidden rounded-2xl">
+                  <img
+                    src="/images/community-3.webp"
+                    alt="Person in a rural setting surrounded by vegetation"
+                    className="aspect-[4/3] w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="rounded-xl border border-primary-200 bg-white p-5">
+                    <p className="text-2xl font-black text-primary-700">57%</p>
+                    <p className="mt-1 text-xs text-text-muted">
+                      of Africans without reliable access to essential medicines (WHO)
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-primary-200 bg-white p-5">
+                    <p className="text-2xl font-black text-primary-700">1 : 5,000</p>
+                    <p className="mt-1 text-xs text-text-muted">
+                      doctor-to-patient ratio in sub-Saharan Africa (WHO, 2023)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </AnimatedBlock>
+          </div>
+        </div>
+      </section>
+
+      {/* Principles */}
+      <section className="bg-white py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedBlock>
+            <div className="max-w-2xl">
+              <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
+                What we stand for
+              </h2>
+              <p className="mt-4 text-text-muted leading-relaxed">
+                The decisions behind how PhotoMed works — what it recommends, what it withholds,
+                and how it handles edge cases — are not arbitrary. They follow from a set of
+                principles we hold without exception.
               </p>
             </div>
           </AnimatedBlock>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
-            <AnimatedBlock delay={100}>
-              <div className="rounded-2xl border border-primary-700/30 bg-primary-800/40 p-8">
-                <div className="text-5xl font-black text-primary-500/50">01</div>
-                <h3 className="mt-4 text-xl font-bold text-white">Map</h3>
-                <p className="mt-3 text-sm text-primary-200/70 leading-relaxed">
-                  Map the world's vegetation the way Google Street View mapped every street.
-                  Build the most comprehensive geospatial database of medicinal plant locations
-                  on the planet. Community-sourced, AI-verified, continuously updated.
+          <div className="mt-14 grid gap-8 md:grid-cols-2">
+            {principles.map((item, i) => (
+              <AnimatedBlock key={item.title} delay={i * 100}>
+                <div className="h-full rounded-2xl border border-gray-100 bg-surface-dim p-8">
+                  <h3 className="text-lg font-bold text-text-primary">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-text-muted">{item.body}</p>
+                </div>
+              </AnimatedBlock>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Vision */}
+      <section className="bg-primary-900 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-12 lg:grid-cols-5 lg:gap-16">
+            <AnimatedBlock className="lg:col-span-3">
+              <h2 className="text-3xl font-bold text-white sm:text-4xl">
+                The goal is not an app. It is infrastructure.
+              </h2>
+              <div className="mt-6 space-y-4 text-primary-200/80 leading-relaxed">
+                <p>
+                  The immediate product is a mobile application that connects symptoms to
+                  nearby plant-based remedies. But the underlying goal is something larger:
+                  a comprehensive, community-maintained, AI-verified map of the world's
+                  medicinal vegetation — the way Google Street View mapped every street.
+                </p>
+                <p>
+                  The same infrastructure that directs a person in rural Africa to the aloe
+                  vera plant growing two minutes away can eventually support communities on
+                  every continent. It can be extended to animal care — helping farmers and
+                  families treat livestock and pets with the same validated, plant-based
+                  approach.
+                </p>
+                <p>
+                  We are at the beginning of that build. If you believe in what we are doing,
+                  there are ways to help — as a funder, a researcher, or someone who simply
+                  downloads the app and lets it find you the nearest plant.
                 </p>
               </div>
             </AnimatedBlock>
 
-            <AnimatedBlock delay={200}>
-              <div className="rounded-2xl border border-primary-700/30 bg-primary-800/40 p-8">
-                <div className="text-5xl font-black text-primary-500/50">02</div>
-                <h3 className="mt-4 text-xl font-bold text-white">Connect</h3>
-                <p className="mt-3 text-sm text-primary-200/70 leading-relaxed">
-                  Connect every person's symptoms to a verified, nearby, plant-based remedy.
-                  Cross-reference community knowledge with published ethnobotanical research.
-                  Make the tool work offline for the connectivity constraints of rural areas.
-                </p>
-              </div>
-            </AnimatedBlock>
-
-            <AnimatedBlock delay={300}>
-              <div className="rounded-2xl border border-primary-700/30 bg-primary-800/40 p-8">
-                <div className="text-5xl font-black text-primary-500/50">03</div>
-                <h3 className="mt-4 text-xl font-bold text-white">Scale</h3>
-                <p className="mt-3 text-sm text-primary-200/70 leading-relaxed">
-                  Expand across the continent and beyond. Cover more plant species, more symptoms,
-                  more languages. Our long-term vision includes extending the system to veterinary
-                  care — treating livestock and pets with the same plant-based approach.
-                </p>
+            <AnimatedBlock delay={200} className="lg:col-span-2">
+              <div className="overflow-hidden rounded-2xl">
+                <img
+                  src="/images/vegetation-dense.webp"
+                  alt="Dense vegetation representing the scope of medicinal plant diversity"
+                  className="aspect-[3/4] w-full object-cover opacity-90"
+                  loading="lazy"
+                />
               </div>
             </AnimatedBlock>
           </div>
@@ -173,3 +181,4 @@ export default function About() {
     </>
   )
 }
+
