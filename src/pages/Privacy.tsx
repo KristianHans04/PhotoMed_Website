@@ -14,8 +14,8 @@ export default function Privacy() {
               PhotoMed ("Company," "we," "us," or "our") is committed to protecting your
               privacy and the security of your personal information. This Privacy Policy
               describes how we collect, use, store, share, and protect information when you
-              use the PhotoMed mobile application, website (photomed.app and
-              photomed.kristianhans.com), API endpoints, and any related services
+              use the PhotoMed mobile application, website (photomed.app),
+              API endpoints, and any related services
               (collectively, the "Service").
             </p>
             <p className="mt-3">

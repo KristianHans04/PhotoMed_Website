@@ -12,7 +12,7 @@ export default function Terms() {
             <h2 className="text-xl font-bold text-text-primary">1. Acceptance of Terms</h2>
             <p className="mt-3">
               By accessing, downloading, installing, or using the PhotoMed mobile application,
-              website (photomed.app and photomed.kristianhans.com), API endpoints, or any
+              website (photomed.app), API endpoints, or any
               related services (collectively, the "Service"), you acknowledge that you have
               read, understood, and agree to be bound by these Terms of Service ("Terms").
               If you do not agree to these Terms in their entirety, you must not access or

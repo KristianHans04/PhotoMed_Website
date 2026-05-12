@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   tagline: 'AI-Powered Symptom Relief from Nature',
   description:
     'PhotoMed matches your symptoms to medicinal plants growing near you, directs you to the closest one, and tells you how to prepare the remedy. Complementary to modern medicine, built for the communities that need it most.',
-  url: 'https://photomed.kristianhans.com',
+  url: 'https://photomed.app',
   contact: {
     email: 'support@photomed.app',
   },
