@@ -15,7 +15,7 @@ export default function Hero() {
         <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
-              PhotoMed finds the medicinal plants nearest to you that can treat your symptoms — and tells you exactly how to use them.
+              PhotoMed finds the medicinal plants nearest to you that can treat your symptoms.
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-100/90 sm:text-xl">
               PhotoMed uses AI to match your symptoms to medicinal plants near
