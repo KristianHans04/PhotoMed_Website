@@ -268,10 +268,6 @@ export default function Privacy() {
             </p>
             <p className="mt-3 text-sm">
               Email: support@photomed.app
-              <br />
-              Subject line: "Privacy Inquiry"
-              <br />
-              Response time: Within 30 days of receipt
             </p>
           </div>
         </div>

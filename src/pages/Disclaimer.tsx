@@ -205,8 +205,6 @@ export default function Disclaimer() {
             </p>
             <p className="mt-3 text-sm">
               Email: support@photomed.app
-              <br />
-              Subject line: "Medical Disclaimer / Adverse Event Report"
             </p>
           </div>
         </div>

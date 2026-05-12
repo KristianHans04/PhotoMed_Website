@@ -354,8 +354,6 @@ export default function Terms() {
             </p>
             <p className="mt-3 text-sm">
               Email: support@photomed.app
-              <br />
-              Subject line: "Terms of Service Inquiry"
             </p>
           </div>
         </div>
