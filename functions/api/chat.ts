@@ -90,7 +90,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
           { role: 'system', content: SYSTEM_PROMPT },
           ...recentMessages,
         ],
-        max_tokens: 300,
+        max_tokens: 3000,
         temperature: 0.7,
       }),
     })
