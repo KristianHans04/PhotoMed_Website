@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AnimatedBlock, Section } from '@/components/ui/Section'
 import { MapPin, Users, Briefcase } from 'lucide-react'
-import { ATTACHMENT_APPLICATION } from '@/lib/constants'
 
 interface CareerSummary {
   slug: string
