@@ -43,6 +43,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
     const resendKey = env.RESEND_API_KEY
     const toEmail = env.CONTACT_TO_EMAIL || 'support@photomed.app'
+    const contactFrom = 'PhotoMed Support <support@mail.photomed.app>'
 
     // Send notification to team
     const notificationRes = await fetch('https://api.resend.com/emails', {
@@ -52,8 +53,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         Authorization: `Bearer ${resendKey}`,
       },
       body: JSON.stringify({
-        from: 'PhotoMed <noreply@scrapifie.com>',
+        from: contactFrom,
         to: [toEmail],
+        reply_to: body.email,
         subject: `[PhotoMed Contact] ${body.subject}`,
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 32px 24px; background: #ffffff;">
@@ -103,8 +105,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         Authorization: `Bearer ${resendKey}`,
       },
       body: JSON.stringify({
-        from: 'PhotoMed <noreply@scrapifie.com>',
+        from: contactFrom,
         to: [body.email],
+        reply_to: toEmail,
         subject: 'We received your message - PhotoMed',
         html: `
           <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 32px 24px; background: #ffffff;">
@@ -113,10 +116,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             </div>
             <p style="color: #374a3e; font-size: 14px; line-height: 1.7;">
               Hi ${body.name},
-            </p>
-            <p style="color: #374a3e; font-size: 14px; line-height: 1.7;">
-              We have received your message regarding "${body.subject}" and will respond within 48 hours.
-            </p>
+             </p>
+             <p style="color: #374a3e; font-size: 14px; line-height: 1.7;">
+               We have received your message regarding "${body.subject}" and will get back to you within 24 working hours.
+             </p>
             <div style="margin-top: 32px; padding-top: 16px; border-top: 1px solid #dcfce7;">
               <p style="margin: 0; color: #6b7f73; font-size: 12px;">PhotoMed Support Team</p>
             </div>

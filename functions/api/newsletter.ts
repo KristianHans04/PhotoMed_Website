@@ -55,7 +55,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             <p style="font-size: 15px; line-height: 1.7; color: #374a3e; margin: 0 0 24px 0;">
               In the meantime, explore our latest articles on the PhotoMed blog.
             </p>
-            <a href="https://photomed.kristianhans.com/blog" style="display: inline-block; background-color: #15803d; color: #ffffff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600;">
+            <a href="https://photomed.app/blog" style="display: inline-block; background-color: #15803d; color: #ffffff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-size: 14px; font-weight: 600;">
               Read the Blog
             </a>
             <hr style="border: none; border-top: 1px solid #dcfce7; margin: 32px 0;" />

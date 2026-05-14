@@ -81,7 +81,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
-        'HTTP-Referer': 'https://photomed.kristianhans.com',
+        'HTTP-Referer': 'https://photomed.app',
         'X-Title': 'PhotoMed Website Assistant',
       },
       body: JSON.stringify({

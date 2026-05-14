@@ -57,7 +57,7 @@ export default function Contact() {
               <div className="flex flex-col items-center rounded-2xl border border-primary-200 bg-primary-50 p-12 text-center">
                 <CheckCircle className="text-primary-700" size={48} />
                 <h2 className="mt-4 text-2xl font-bold text-text-primary">Message sent</h2>
-                <p className="mt-2 text-text-muted">Thank you for reaching out. We will respond as soon as possible.</p>
+                <p className="mt-2 text-text-muted">Thank you for reaching out. We will get back to you within 24 working hours.</p>
                 <button
                   onClick={() => setStatus('idle')}
                   className="mt-6 text-sm font-medium text-primary-700 hover:underline"

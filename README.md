@@ -4,7 +4,7 @@ An AI-powered traditional medicine mobile application.
 
 ## Overview
 
-This is the public-facing website for PhotoMed, deployed at [photomed.kristianhans.com](https://photomed.kristianhans.com). It serves as the online presence for the platform, providing information about the project, download links for the mobile app, a donation portal, and a contact form.
+This is the public-facing website for PhotoMed, deployed at [photomed.app](https://photomed.app). It serves as the online presence for the platform, providing information about the project, download links for the mobile app, a donation portal, and a contact form.
 
 ## Tech Stack
 
