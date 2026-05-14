@@ -9,6 +9,11 @@ export const SITE_CONFIG = {
   },
 } as const
 
+export const ATTACHMENT_APPLICATION = {
+  deadlineLabel: '31st May',
+  formUrl: 'https://forms.gle/e4xmnW7X4oMhBFYT8',
+} as const
+
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },

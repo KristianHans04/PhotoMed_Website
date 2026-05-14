@@ -111,5 +111,59 @@
       "Recommendation letter based on performance",
       "Possibility of future paid roles depending on performance and availability of funding"
     ]
+  },
+  {
+    "slug": "software-engineering-attachee",
+    "title": "Software Engineering Attachee",
+    "positions": 2,
+    "type": "Attachment",
+    "location": "Hybrid",
+    "description": "Support development of the platform by contributing to frontend and backend features, fixing bugs, and improving performance under guidance from the engineering team.",
+    "responsibilities": [
+      "Building and maintaining mobile app features using Flutter and Dart",
+      "Supporting backend API development with Node.js, Express, and TypeScript",
+      "Integrating mobile screens with backend endpoints using Dio",
+      "Fixing bugs and improving application performance",
+      "Writing clean, readable, and reusable code",
+      "Participating in code reviews and technical discussions",
+      "Documenting technical work and preparing weekly progress reports"
+    ],
+    "requirements": [
+      "Third-year or final-year student seeking attachment",
+      "Basic understanding of Flutter and Dart",
+      "Basic understanding of state management with Riverpod",
+      "Basic understanding of API integration with Dio",
+      "Basic understanding of navigation with GoRouter",
+      "Basic understanding of backend development using Node.js, Express, and TypeScript",
+      "Basic understanding of PostgreSQL databases",
+      "Familiarity with Git and GitHub",
+      "Willing to learn and work in a startup environment",
+      "Organized and able to meet weekly targets",
+      "Able to work with minimum supervision"
+    ],
+    "preferredQualifications": [
+      "Experience building projects with Flutter",
+      "Experience with Riverpod, Dio, and GoRouter in a real project",
+      "Familiarity with TypeScript backend APIs using Express",
+      "Familiarity with Prisma ORM and PostgreSQL",
+      "Understanding of JWT authentication flows",
+      "Basic knowledge of testing and debugging workflows in Flutter or Node.js",
+      "Interest in healthcare, AI, startups, and social impact"
+    ],
+    "eligibleCourses": [
+      "Software Engineering",
+      "Computer Science",
+      "Information Technology",
+      "Computer Engineering",
+      "Data Science",
+      "Business IT"
+    ],
+    "benefits": [
+      "Real startup engineering experience",
+      "Hands-on exposure to modern web development workflows",
+      "Mentorship from industry professionals",
+      "Portfolio-ready production work",
+      "Recommendation letter based on performance"
+    ]
   }
 ]

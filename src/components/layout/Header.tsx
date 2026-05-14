@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
-import { NAV_LINKS } from '@/lib/constants'
+import { ATTACHMENT_APPLICATION, NAV_LINKS } from '@/lib/constants'
 import { cn } from '@/lib/utils'
 
 export default function Header() {
@@ -50,6 +50,22 @@ export default function Header() {
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
+      </div>
+
+      <div className="border-t border-primary-500 bg-primary-700 text-white">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col gap-2 py-2 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-center text-xs font-medium sm:text-left sm:text-sm">
+              We're Hiring! Deadline {ATTACHMENT_APPLICATION.deadlineLabel}.
+            </p>
+            <Link
+              to="/careers"
+              className="inline-flex w-full items-center justify-center rounded-md bg-white/15 px-3 py-1.5 text-xs font-semibold transition-colors hover:bg-white/25 sm:w-auto sm:text-sm"
+            >
+              View in Careers
+            </Link>
+          </div>
+        </div>
       </div>
 
       {isOpen && (

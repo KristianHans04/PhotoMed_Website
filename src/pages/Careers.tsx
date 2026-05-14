@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AnimatedBlock, Section } from '@/components/ui/Section'
 import { MapPin, Users, Briefcase } from 'lucide-react'
+import { ATTACHMENT_APPLICATION } from '@/lib/constants'
 
 interface CareerSummary {
   slug: string
@@ -56,17 +57,6 @@ export default function Careers() {
       </section>
 
       <Section>
-        <AnimatedBlock>
-          <div className="mx-auto max-w-3xl">
-            <h2 className="text-2xl font-bold text-text-primary sm:text-3xl">Open positions</h2>
-            <p className="mt-3 text-text-muted">
-              All current openings are attachment positions for third-year and final-year
-              university students. Students from health-related courses who also have
-              strong communication, research, marketing, or content creation skills
-              may also apply.
-            </p>
-          </div>
-        </AnimatedBlock>
 
         {loading ? (
           <div className="mt-12 text-center text-text-muted">Loading positions...</div>

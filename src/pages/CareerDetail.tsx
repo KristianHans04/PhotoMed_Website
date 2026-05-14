@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Section, AnimatedBlock } from '@/components/ui/Section'
 import { MapPin, Users, Briefcase, ArrowLeft } from 'lucide-react'
+import { ATTACHMENT_APPLICATION } from '@/lib/constants'
 
 interface Career {
   slug: string
@@ -167,11 +168,17 @@ export default function CareerDetail() {
                   <div className="rounded-xl border border-gray-200 bg-white p-6">
                     <h3 className="text-lg font-bold text-text-primary">How to apply</h3>
                     <p className="mt-3 text-sm text-text-muted leading-relaxed">
-                      Send the following to{' '}
-                      <a href="mailto:recruitment@photomed.app" className="font-semibold text-primary-700 hover:underline">
-                        recruitment@photomed.app
-                      </a>:
+                      All attachment applications close on {ATTACHMENT_APPLICATION.deadlineLabel}.
+                      Apply through the official form and select <strong>{career.title}</strong>.
                     </p>
+                    <a
+                      href={ATTACHMENT_APPLICATION.formUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="mt-4 inline-flex w-full items-center justify-center rounded-lg bg-primary-700 px-4 py-2.5 text-sm font-semibold text-white transition-all hover:bg-primary-800"
+                    >
+                      Apply for this role
+                    </a>
                     <ul className="mt-4 space-y-2">
                       {[
                         'Your CV',
