@@ -239,6 +239,46 @@ function extractJsonPayload(rawText) {
   }
 }
 
+function extractAssistantContent(payload) {
+  const choice = payload?.choices?.[0]
+  const candidate = choice?.message?.content ?? choice?.text ?? payload?.output_text
+
+  if (typeof candidate === 'string') {
+    return sanitizeText(candidate)
+  }
+
+  if (Array.isArray(candidate)) {
+    const combined = candidate
+      .map((part) => {
+        if (typeof part === 'string') {
+          return part
+        }
+        if (part && typeof part === 'object') {
+          if (typeof part.text === 'string') {
+            return part.text
+          }
+          if (typeof part.content === 'string') {
+            return part.content
+          }
+        }
+        return ''
+      })
+      .join('\n')
+    return sanitizeText(combined)
+  }
+
+  if (candidate && typeof candidate === 'object') {
+    if (typeof candidate.text === 'string') {
+      return sanitizeText(candidate.text)
+    }
+    if (typeof candidate.content === 'string') {
+      return sanitizeText(candidate.content)
+    }
+  }
+
+  return ''
+}
+
 function shouldRetryStatus(statusCode) {
   return statusCode === 408 || statusCode === 409 || statusCode === 425 || statusCode === 429 || statusCode >= 500
 }
@@ -289,8 +329,8 @@ async function callOpenRouterWithRetry({ apiKey, model, topic, facts }) {
       }
 
       const payload = await response.json()
-      const content = payload?.choices?.[0]?.message?.content
-      if (!content || typeof content !== 'string') {
+      const content = extractAssistantContent(payload)
+      if (!content) {
         if (attempt < MAX_API_RETRIES) {
           await waitFor(600 * attempt)
           continue
