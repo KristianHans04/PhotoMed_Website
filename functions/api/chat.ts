@@ -1,5 +1,6 @@
 interface Env {
   OPENROUTER_API_KEY: string
+  OPENROUTER_MODEL?: string
   RATE_LIMIT_KV?: KVNamespace
 }
 
@@ -64,6 +65,13 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   try {
+    if (!env.OPENROUTER_API_KEY) {
+      return new Response(
+        JSON.stringify({ error: 'AI configuration is missing' }),
+        { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
+      )
+    }
+
     const body: ChatRequest = await request.json()
 
     if (!body.messages || !Array.isArray(body.messages) || body.messages.length === 0) {
@@ -85,7 +93,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         'X-Title': 'PhotoMed Website Assistant',
       },
       body: JSON.stringify({
-        model: 'openrouter/free',
+        model: env.OPENROUTER_MODEL || 'openrouter/free',
         messages: [
           { role: 'system', content: SYSTEM_PROMPT },
           ...recentMessages,
@@ -104,7 +112,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       )
     }
 
-    const data = await openrouterRes.json() as { choices: { message: { content: string } }[] }
+    const data = await openrouterRes.json() as { choices?: { message?: { content?: string } }[] }
     let reply = data.choices?.[0]?.message?.content || 'I was unable to generate a response. Please try again.'
 
     // Strip chain-of-thought leaks (model sometimes prefixes with thinking)

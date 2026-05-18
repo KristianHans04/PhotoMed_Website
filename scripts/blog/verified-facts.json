@@ -1,0 +1,104 @@
+{
+  "facts": [
+    {
+      "id": "who-traditional-medicine-80pct",
+      "value": "Up to 80%",
+      "label": "of people in some Asian and African countries rely on traditional medicine for primary health care",
+      "sourceTitle": "WHO Fact Sheet: Traditional, Complementary and Integrative Medicine",
+      "sourceUrl": "https://www.who.int/news-room/fact-sheets/detail/traditional-complementary-and-integrative-medicine",
+      "sourceYear": "n.d.",
+      "categories": ["Research", "Impact", "Traditional Medicine", "Community"],
+      "tags": ["traditional-medicine", "access", "community", "policy"]
+    },
+    {
+      "id": "who-member-states-194",
+      "value": "194",
+      "label": "countries are WHO Member States",
+      "sourceTitle": "World Health Organization: Member States",
+      "sourceUrl": "https://www.who.int/about/accountability/governance/member-states",
+      "sourceYear": "n.d.",
+      "categories": ["Research", "Impact", "Product"],
+      "tags": ["policy", "global-health", "research"]
+    },
+    {
+      "id": "who-gctm-2022",
+      "value": "2022",
+      "label": "WHO established the Global Centre for Traditional Medicine in India",
+      "sourceTitle": "WHO News: WHO establishes the Global Centre for Traditional Medicine in India",
+      "sourceUrl": "https://www.who.int/news/item/25-03-2022-who-establishes-the-global-centre-for-traditional-medicine-in-india",
+      "sourceYear": "2022",
+      "categories": ["Research", "Technology", "Traditional Medicine"],
+      "tags": ["policy", "traditional-medicine", "technology"]
+    },
+    {
+      "id": "who-global-summit-2023",
+      "value": "2023",
+      "label": "WHO held its first Traditional Medicine Global Summit",
+      "sourceTitle": "WHO Event: WHO Traditional Medicine Global Summit 2023",
+      "sourceUrl": "https://www.who.int/news-room/events/detail/2023/08/17/default-calendar/who-traditional-medicine-global-summit-2023",
+      "sourceYear": "2023",
+      "categories": ["Research", "Impact", "Traditional Medicine"],
+      "tags": ["policy", "traditional-medicine", "research"]
+    },
+    {
+      "id": "uhc-coverage-gap-4-5-billion",
+      "value": "4.5 billion",
+      "label": "people were not fully covered by essential health services in 2021",
+      "sourceTitle": "WHO & World Bank UHC Update",
+      "sourceUrl": "https://www.who.int/news/item/18-12-2023-4.5-billion-people-not-fully-covered-by-essential-health-services",
+      "sourceYear": "2023",
+      "categories": ["Impact", "Product", "Community", "Research"],
+      "tags": ["access", "uhc", "community", "impact"]
+    },
+    {
+      "id": "sdgs-17-goals",
+      "value": "17",
+      "label": "Sustainable Development Goals were adopted by all UN Member States in 2015",
+      "sourceTitle": "United Nations Sustainable Development Goals",
+      "sourceUrl": "https://sdgs.un.org/goals",
+      "sourceYear": "2015",
+      "categories": ["Impact", "Research", "Community"],
+      "tags": ["sdg", "policy", "impact"]
+    },
+    {
+      "id": "gsma-ssa-mobile-495-million",
+      "value": "495 million",
+      "label": "unique mobile subscribers were projected in Sub-Saharan Africa by 2025",
+      "sourceTitle": "GSMA: The Mobile Economy Sub-Saharan Africa 2023",
+      "sourceUrl": "https://www.gsma.com/mobileeconomy/sub-saharan-africa/",
+      "sourceYear": "2023",
+      "categories": ["Technology", "Impact", "Product", "Community"],
+      "tags": ["mobile", "technology", "community", "access"]
+    },
+    {
+      "id": "nagoya-protocol-2014",
+      "value": "2014",
+      "label": "the Nagoya Protocol entered into force to support fair and equitable benefit-sharing",
+      "sourceTitle": "Convention on Biological Diversity: The Nagoya Protocol",
+      "sourceUrl": "https://www.cbd.int/abs/",
+      "sourceYear": "2014",
+      "categories": ["Traditional Medicine", "Community", "Research"],
+      "tags": ["policy", "benefit-sharing", "community", "ethics"]
+    },
+    {
+      "id": "indigenous-languages-decade-2022-2032",
+      "value": "2022-2032",
+      "label": "is the UN International Decade of Indigenous Languages",
+      "sourceTitle": "UNESCO: International Decade of Indigenous Languages",
+      "sourceUrl": "https://www.unesco.org/en/decades/indigenous-languages",
+      "sourceYear": "2022",
+      "categories": ["Community", "Impact", "Traditional Medicine"],
+      "tags": ["language", "community", "knowledge", "policy"]
+    },
+    {
+      "id": "language-loss-two-weeks",
+      "value": "Every 2 weeks",
+      "label": "a language disappears, threatening associated cultural and knowledge systems",
+      "sourceTitle": "United Nations: Indigenous Languages",
+      "sourceUrl": "https://www.un.org/en/observances/endangered-languages-day",
+      "sourceYear": "n.d.",
+      "categories": ["Community", "Research", "Impact"],
+      "tags": ["language", "knowledge", "community", "impact"]
+    }
+  ]
+}

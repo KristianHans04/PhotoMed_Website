@@ -3,12 +3,16 @@ import { Link, useParams } from 'react-router-dom'
 import { Section } from '@/components/ui/Section'
 
 interface ContentBlock {
-  type: 'paragraph' | 'heading' | 'quote' | 'statistic'
+  type: 'paragraph' | 'heading' | 'quote' | 'statistic' | 'list' | 'callout' | 'divider'
   text?: string
   attribution?: string
   value?: string
   label?: string
   source?: string
+  items?: string[]
+  style?: 'ordered' | 'unordered'
+  tone?: 'info' | 'success' | 'warning'
+  title?: string
 }
 
 interface BlogPost {
@@ -63,6 +67,55 @@ function renderContentBlock(block: ContentBlock, index: number) {
           )}
         </div>
       )
+    case 'list': {
+      const items = Array.isArray(block.items) ? block.items.filter(Boolean) : []
+      if (items.length === 0) {
+        return null
+      }
+      if (block.style === 'ordered') {
+        return (
+          <ol key={index} className="my-6 list-decimal space-y-2 pl-5 text-text-muted">
+            {items.map((item, itemIndex) => (
+              <li key={`${index}-${itemIndex}`} className="leading-relaxed">
+                {item}
+              </li>
+            ))}
+          </ol>
+        )
+      }
+      return (
+        <ul key={index} className="my-6 list-disc space-y-2 pl-5 text-text-muted">
+          {items.map((item, itemIndex) => (
+            <li key={`${index}-${itemIndex}`} className="leading-relaxed">
+              {item}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+    case 'callout': {
+      const tone = block.tone || 'info'
+      const toneStyles: Record<string, string> = {
+        info: 'border-blue-200 bg-blue-50/70',
+        success: 'border-green-200 bg-green-50/70',
+        warning: 'border-amber-200 bg-amber-50/70',
+      }
+      const classes = toneStyles[tone] || toneStyles.info
+      return (
+        <aside key={index} className={`my-8 rounded-xl border p-5 ${classes}`}>
+          {block.title && (
+            <p className="text-sm font-semibold uppercase tracking-wide text-text-primary">
+              {block.title}
+            </p>
+          )}
+          <p className={`leading-relaxed text-text-muted ${block.title ? 'mt-2' : ''}`}>
+            {block.text}
+          </p>
+        </aside>
+      )
+    }
+    case 'divider':
+      return <hr key={index} className="my-8 border-primary-100" />
     case 'paragraph':
     default:
       return (

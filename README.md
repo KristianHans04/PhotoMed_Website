@@ -61,6 +61,48 @@ Deployment happens automatically on push to `main` . Manual deploy:
 npm run deploy
 ```
 
+## Automated Daily Blog Publishing
+
+This repo includes a scheduled workflow that can generate and publish one AI-assisted blog post every morning.
+
+### How it works
+
+1. GitHub Actions runs `.github/workflows/daily-blog.yml` on schedule.
+2. `npm run blog:generate:daily` executes `scripts/blog/generate-daily-post.mjs`.
+3. The generator:
+   - reads existing `public/content/blog-posts.json`,
+   - selects a topic/category rotation,
+   - grounds statistics in `scripts/blog/verified-facts.json`,
+   - generates narrative text with OpenRouter,
+   - enforces validation gates (schema + verified statistic/citation matching),
+   - appends the post to `public/content/blog-posts.json`.
+4. If content changed, the workflow commits/pushes it to `main`, which triggers normal deployment.
+
+### Required GitHub repository secrets
+
+- `OPENROUTER_API_KEY` (required)
+- `OPENROUTER_MODEL` (optional, defaults to `openrouter/free`)
+
+### Editorial quality controls
+
+- Numeric/statistical claims are restricted to curated facts in `scripts/blog/verified-facts.json`.
+- Every statistic block includes a source citation and URL.
+- The script fails closed: if validation fails, it does not write or commit changes.
+- API generation includes retry + timeout handling for transient provider/network failures.
+- Generated posts include rich content blocks (headings, quotes, statistics, lists, callouts, and dividers).
+
+### Manual run
+
+```bash
+npm run blog:generate:daily
+```
+
+To bypass same-day duplicate protection when testing:
+
+```bash
+node scripts/blog/generate-daily-post.mjs --force
+```
+
 
 ## APK Distribution
 
